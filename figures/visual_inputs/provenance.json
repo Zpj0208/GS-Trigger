@@ -1,0 +1,69 @@
+{
+  "contract": {
+    "question": "How do recorded fixed and learned strength-control warps alter identical test inputs?",
+    "claim": "The plate makes image changes and spatial difference patterns inspectable under one common rendering scale.",
+    "archetype": "image plate",
+    "backend": "python",
+    "panels": {
+      "a": "First non-target test image and its five strength-control transforms plus clean input.",
+      "b": "Second non-target test image under the same transforms."
+    },
+    "sample_selection": "First two test-set indices with label != 0, fixed before rendering; no ASR or image-quality selection.",
+    "unit": "Two illustrative inputs from one recorded seed block (42), not independent training repetitions.",
+    "precision": "Exact saved float32 initialization; learned seeds read from six-decimal CSV, no extra renormalization.",
+    "transform": "Same 0.5/32 bicubic warp, align_corners=True, clipped grid, bilinear sampling; raw [0,1] RGB intensities.",
+    "difference": "min(10*mean_channels(abs(warp-clean)),1); one magma color scale [0,1] over all difference cells.",
+    "exports": "159.2 x 119 mm, Arial, editable 7.2-pt labels in SVG/PDF, embedded 32x32 raster images, PNG and 1000-dpi TIFF.",
+    "scope": "These reconstructions are separate from the 9,000-pair random-warp quality comparison; no predictions or ASR inferred."
+  },
+  "seed": 42,
+  "examples": [
+    0,
+    1
+  ],
+  "static_multiplier": 1.3051,
+  "psnr_multiplier": 1.5119,
+  "source_hashes": {
+    "initial_seed": "faf71b00937e36a7df43b875ec9724af56718e22cefb88f3d81075d857bf9108",
+    "learned_seed_csv": "104e1e62e7c47fb7c9169a8bed169df75d170144ba4bc34bf1c48706cb4113fa",
+    "operator_code": "e35f95b1104f3522ceea568ad55970ea37de2a47fe396a80c8500312b7f56360",
+    "dataset_test_batch": "f53d8d457504f7cff4ea9e021afcf0e0ad8e24a91f3fc42091b8adef61157831"
+  },
+  "torch_reconstruction_version": "2.4.1+cpu",
+  "reconstruction_device": "CPU",
+  "rounding": "Only exported PNGs use nearest-integer 8-bit RGB; figure and NPZ use float32 inputs.",
+  "psnr_reconstruction_check": [
+    {
+      "condition": "Fixed",
+      "reconstructed_mean_psnr": 31.208293914794922,
+      "reported_mean_psnr": 31.208,
+      "difference_dB": 0.0002939147949234666
+    },
+    {
+      "condition": "Static amplified",
+      "reconstructed_mean_psnr": 28.999940872192383,
+      "reported_mean_psnr": 29.0,
+      "difference_dB": -5.91278076171875e-05
+    },
+    {
+      "condition": "Projected GS",
+      "reconstructed_mean_psnr": 28.316621780395508,
+      "reported_mean_psnr": 28.317,
+      "difference_dB": -0.00037821960449235803
+    },
+    {
+      "condition": "Free GS",
+      "reconstructed_mean_psnr": 27.838972091674805,
+      "reported_mean_psnr": 27.839,
+      "difference_dB": -2.7908325193948258e-05
+    },
+    {
+      "condition": "PSNR-matched Fixed",
+      "reconstructed_mean_psnr": 27.78654670715332,
+      "reported_mean_psnr": 27.787,
+      "difference_dB": -0.00045329284667872116
+    }
+  ],
+  "alignment_verdict": "PASS",
+  "retained_control_identity": "Original Free seed-42 run, final ASR 90.00%; not the instrumented 97.07% repeat."
+}

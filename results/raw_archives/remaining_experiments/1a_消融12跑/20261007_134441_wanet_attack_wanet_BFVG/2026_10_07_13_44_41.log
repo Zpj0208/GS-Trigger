@@ -1,0 +1,2185 @@
+2026-10-07:13:44:41 [INFO    ] [prototype.py:140] {'amp': False,
+ 'attack': 'wanet',
+ 'attack_label_trans': 'all2one',
+ 'attack_target': 0,
+ 'batch_size': 128,
+ 'bd_yaml_path': '/root/miniconda3/lib/python3.12/site-packages/backdoorbench/attack/../config/attack/wanet/default.yaml',
+ 'client_optimizer': 'sgd',
+ 'cross_ratio': 2,
+ 'dataset': 'cifar10',
+ 'dataset_path': '/root/autodl-tmp/data/cifar10',
+ 'device': 'cuda',
+ 'epochs': 100,
+ 'frequency_save': 0,
+ 'grid_rescale': 1,
+ 'gs_seed_wd': 0,
+ 'gs_trigger': 1,
+ 'img_size': (32, 32, 3),
+ 'input_channel': 3,
+ 'input_height': 32,
+ 'input_width': 32,
+ 'k': 8,
+ 'lr': 0.01,
+ 'lr_scheduler': 'MultiStepLR',
+ 'model': 'preactresnet18',
+ 'non_blocking': True,
+ 'num_classes': 10,
+ 'num_workers': 8,
+ 'pin_memory': True,
+ 'pratio': 0.01,
+ 'prefetch': False,
+ 'random_crop': 5,
+ 'random_rotation': 10,
+ 'random_seed': 43,
+ 's': 0.5,
+ 'save_path': './record/20261007_134441_wanet_attack_wanet_BFVG',
+ 'sgd_momentum': 0.9,
+ 'steplr_gamma': 0.1,
+ 'steplr_milestones': [100, 200, 300, 400],
+ 'terminal_info': ['/root/miniconda3/lib/python3.12/site-packages/backdoorbench/attack/wanet.py',
+                   '--model',
+                   'preactresnet18',
+                   '--dataset',
+                   'cifar10',
+                   '--dataset_path',
+                   '/root/autodl-tmp/data',
+                   '--pratio',
+                   '0.01',
+                   '--gs_trigger',
+                   '1',
+                   '--num_workers',
+                   '8',
+                   '--device',
+                   'cuda',
+                   '--epochs',
+                   '100',
+                   '--k',
+                   '8',
+                   '--random_seed',
+                   '43'],
+ 'wd': 0.0005,
+ 'yaml_path': '/root/miniconda3/lib/python3.12/site-packages/backdoorbench/attack/../config/attack/prototype/cifar10.yaml'}
+2026-10-07:13:44:41 [DEBUG   ] [prototype.py:142] Only INFO or above level log will show in cmd. DEBUG level log only will show in log file.
+2026-10-07:13:44:41 [DEBUG   ] [prototype.py:148] Getting git info fails.
+2026-10-07:13:44:41 [INFO    ] [wanet.py:167] stage1 start
+2026-10-07:13:44:43 [DEBUG   ] [prototype.py:168] dataset_and_transform_generate done
+2026-10-07:13:44:43 [DEBUG   ] [bd_dataset_v2.py:68] Not DatasetFolder or ImageFolder, so iter through
+2026-10-07:13:44:44 [DEBUG   ] [bd_dataset_v2.py:68] Not DatasetFolder or ImageFolder, so iter through
+2026-10-07:13:44:44 [INFO    ] [wanet.py:184] Be careful, here must replace the regular train tranform with test transform.
+2026-10-07:13:44:44 [INFO    ] [wanet.py:200] stage2 start
+2026-10-07:13:44:44 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:13:44:44 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:13:44:45 [INFO    ] [wanet.py:240] GS-Trigger: learnable trigger seed initialized (separate param group, wd=0)
+2026-10-07:13:44:45 [INFO    ] [wanet.py:242] Train from scratch!!!
+2026-10-07:13:44:45 [INFO    ] [wanet.py:282] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:13:44:45 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:44:45 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:44:46 [INFO    ] [wanet.py:399] Epoch 1:
+2026-10-07:13:44:46 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:44:55 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:44:55 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:44:57 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0000, eval sets rebuilt with current trigger
+2026-10-07:13:45:00 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 4.361725021416033,
+ 'clean_test_loss_avg_over_batch': 1.098147162153751,
+ 'cross_test_loss_avg_over_batch': 1.2443288685400276,
+ 'epoch': 0,
+ 'ra_test_loss_avg_over_batch': 1.1838228114893738,
+ 'test_acc': 0.6072,
+ 'test_asr': 0.04722222222222222,
+ 'test_cross_acc': 0.564,
+ 'test_ra': 0.5775555555555556,
+ 'train_acc': 0.45786,
+ 'train_acc_clean_only': 0.4610768632109284,
+ 'train_asr_bd_only': 0.11253196930946291,
+ 'train_cross_acc_only': 0.4296675191815857,
+ 'train_epoch_loss_avg_over_batch': 1.4849571581081966,
+ 'train_ra_bd_only': 0.4040920716112532}
+2026-10-07:13:45:00 [DEBUG   ] [pyplot.py:497] Loaded backend agg version v2.2.
+2026-10-07:13:45:00 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:45:00 [INFO    ] [wanet.py:399] Epoch 2:
+2026-10-07:13:45:00 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:45:09 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:45:09 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:45:11 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0002, eval sets rebuilt with current trigger
+2026-10-07:13:45:14 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 4.19889922209189,
+ 'clean_test_loss_avg_over_batch': 1.0403494035141378,
+ 'cross_test_loss_avg_over_batch': 1.2067841185799129,
+ 'epoch': 1,
+ 'ra_test_loss_avg_over_batch': 1.1871955680175565,
+ 'test_acc': 0.6432,
+ 'test_asr': 0.04833333333333333,
+ 'test_cross_acc': 0.588,
+ 'test_ra': 0.592,
+ 'train_acc': 0.63894,
+ 'train_acc_clean_only': 0.6441518012575009,
+ 'train_asr_bd_only': 0.10741687979539642,
+ 'train_cross_acc_only': 0.5792838874680307,
+ 'train_epoch_loss_avg_over_batch': 1.025773177518869,
+ 'train_ra_bd_only': 0.5805626598465473}
+2026-10-07:13:45:14 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:45:14 [INFO    ] [wanet.py:399] Epoch 3:
+2026-10-07:13:45:14 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:45:23 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:45:23 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:45:25 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0007, eval sets rebuilt with current trigger
+2026-10-07:13:45:28 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 5.8504828466496,
+ 'clean_test_loss_avg_over_batch': 1.0692460453962978,
+ 'cross_test_loss_avg_over_batch': 1.095586649979217,
+ 'epoch': 2,
+ 'ra_test_loss_avg_over_batch': 1.0367469183156188,
+ 'test_acc': 0.6663,
+ 'test_asr': 0.021777777777777778,
+ 'test_cross_acc': 0.6406,
+ 'test_ra': 0.6687777777777778,
+ 'train_acc': 0.7161,
+ 'train_acc_clean_only': 0.721936633420034,
+ 'train_asr_bd_only': 0.08184143222506395,
+ 'train_cross_acc_only': 0.6687979539641944,
+ 'train_epoch_loss_avg_over_batch': 0.8262830204366113,
+ 'train_ra_bd_only': 0.6982097186700768}
+2026-10-07:13:45:29 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:45:29 [INFO    ] [wanet.py:399] Epoch 4:
+2026-10-07:13:45:29 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:45:37 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:45:37 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:45:39 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0012, eval sets rebuilt with current trigger
+2026-10-07:13:45:43 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 5.492842701119437,
+ 'clean_test_loss_avg_over_batch': 0.6816955646382102,
+ 'cross_test_loss_avg_over_batch': 0.8744372642492946,
+ 'epoch': 3,
+ 'ra_test_loss_avg_over_batch': 0.7682191830285838,
+ 'test_acc': 0.7707,
+ 'test_asr': 0.036333333333333336,
+ 'test_cross_acc': 0.7049,
+ 'test_ra': 0.739,
+ 'train_acc': 0.7577,
+ 'train_acc_clean_only': 0.7633891084850595,
+ 'train_asr_bd_only': 0.11508951406649616,
+ 'train_cross_acc_only': 0.7237851662404092,
+ 'train_epoch_loss_avg_over_batch': 0.7078462332258444,
+ 'train_ra_bd_only': 0.7058823529411765}
+2026-10-07:13:45:43 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:45:43 [INFO    ] [wanet.py:399] Epoch 5:
+2026-10-07:13:45:43 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:45:52 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:45:52 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:45:54 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0019, eval sets rebuilt with current trigger
+2026-10-07:13:45:57 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 6.243682041974135,
+ 'clean_test_loss_avg_over_batch': 0.7258594888675062,
+ 'cross_test_loss_avg_over_batch': 1.035237608076651,
+ 'epoch': 4,
+ 'ra_test_loss_avg_over_batch': 0.753191267100858,
+ 'test_acc': 0.7569,
+ 'test_asr': 0.006888888888888889,
+ 'test_cross_acc': 0.6635,
+ 'test_ra': 0.745,
+ 'train_acc': 0.78758,
+ 'train_acc_clean_only': 0.7943146210088681,
+ 'train_asr_bd_only': 0.10997442455242967,
+ 'train_cross_acc_only': 0.7058823529411765,
+ 'train_epoch_loss_avg_over_batch': 0.6266369231216743,
+ 'train_ra_bd_only': 0.7672634271099744}
+2026-10-07:13:45:58 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:45:58 [INFO    ] [wanet.py:399] Epoch 6:
+2026-10-07:13:45:58 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:46:07 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:46:07 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:46:09 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0030, eval sets rebuilt with current trigger
+2026-10-07:13:46:12 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 5.325340291144142,
+ 'clean_test_loss_avg_over_batch': 0.574857628798183,
+ 'cross_test_loss_avg_over_batch': 0.8609062252165396,
+ 'epoch': 5,
+ 'ra_test_loss_avg_over_batch': 0.6487359610241903,
+ 'test_acc': 0.8085,
+ 'test_asr': 0.01877777777777778,
+ 'test_cross_acc': 0.7123,
+ 'test_ra': 0.7775555555555556,
+ 'train_acc': 0.80966,
+ 'train_acc_clean_only': 0.8163833708785583,
+ 'train_asr_bd_only': 0.13846153846153847,
+ 'train_cross_acc_only': 0.7243589743589743,
+ 'train_epoch_loss_avg_over_batch': 0.5657821276303753,
+ 'train_ra_bd_only': 0.7897435897435897}
+2026-10-07:13:46:13 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:46:13 [INFO    ] [wanet.py:399] Epoch 7:
+2026-10-07:13:46:13 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:46:21 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:46:21 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:46:23 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0042, eval sets rebuilt with current trigger
+2026-10-07:13:46:27 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 4.9627303607027295,
+ 'clean_test_loss_avg_over_batch': 0.584191552823103,
+ 'cross_test_loss_avg_over_batch': 0.9950142336797111,
+ 'epoch': 6,
+ 'ra_test_loss_avg_over_batch': 0.685435585572686,
+ 'test_acc': 0.8118,
+ 'test_asr': 0.043666666666666666,
+ 'test_cross_acc': 0.6868,
+ 'test_ra': 0.7775555555555556,
+ 'train_acc': 0.8227,
+ 'train_acc_clean_only': 0.8301349663096238,
+ 'train_asr_bd_only': 0.09462915601023018,
+ 'train_cross_acc_only': 0.7225063938618926,
+ 'train_epoch_loss_avg_over_batch': 0.5295988440970936,
+ 'train_ra_bd_only': 0.8286445012787724}
+2026-10-07:13:46:27 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:46:27 [INFO    ] [wanet.py:399] Epoch 8:
+2026-10-07:13:46:27 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:46:36 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:46:36 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:46:38 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0055, eval sets rebuilt with current trigger
+2026-10-07:13:46:41 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 5.305987478981556,
+ 'clean_test_loss_avg_over_batch': 0.5034655087356326,
+ 'cross_test_loss_avg_over_batch': 0.9275410084784785,
+ 'epoch': 7,
+ 'ra_test_loss_avg_over_batch': 0.5542620168605321,
+ 'test_acc': 0.8307,
+ 'test_asr': 0.011222222222222222,
+ 'test_cross_acc': 0.7055,
+ 'test_ra': 0.813,
+ 'train_acc': 0.83514,
+ 'train_acc_clean_only': 0.8417678743318247,
+ 'train_asr_bd_only': 0.13810741687979539,
+ 'train_cross_acc_only': 0.7698209718670077,
+ 'train_epoch_loss_avg_over_batch': 0.49606324347388714,
+ 'train_ra_bd_only': 0.7851662404092071}
+2026-10-07:13:46:41 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:46:41 [INFO    ] [wanet.py:399] Epoch 9:
+2026-10-07:13:46:41 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:46:49 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:46:49 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:46:52 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0070, eval sets rebuilt with current trigger
+2026-10-07:13:46:55 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 5.288017165492958,
+ 'clean_test_loss_avg_over_batch': 0.521600366393222,
+ 'cross_test_loss_avg_over_batch': 0.8351498910143406,
+ 'epoch': 8,
+ 'ra_test_loss_avg_over_batch': 0.56437039711106,
+ 'test_acc': 0.8315,
+ 'test_asr': 0.01988888888888889,
+ 'test_cross_acc': 0.7401,
+ 'test_ra': 0.8156666666666667,
+ 'train_acc': 0.8463,
+ 'train_acc_clean_only': 0.8536465480164663,
+ 'train_asr_bd_only': 0.11764705882352941,
+ 'train_cross_acc_only': 0.7519181585677749,
+ 'train_epoch_loss_avg_over_batch': 0.4616315832833195,
+ 'train_ra_bd_only': 0.8465473145780051}
+2026-10-07:13:46:55 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:46:55 [INFO    ] [wanet.py:399] Epoch 10:
+2026-10-07:13:46:55 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:47:04 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:47:04 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:47:06 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0087, eval sets rebuilt with current trigger
+2026-10-07:13:47:10 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 4.885729017392011,
+ 'clean_test_loss_avg_over_batch': 0.4218998257117935,
+ 'cross_test_loss_avg_over_batch': 0.6729401753673071,
+ 'epoch': 9,
+ 'ra_test_loss_avg_over_batch': 0.5372909890933776,
+ 'test_acc': 0.8613,
+ 'test_asr': 0.02688888888888889,
+ 'test_cross_acc': 0.7766,
+ 'test_ra': 0.8222222222222222,
+ 'train_acc': 0.85722,
+ 'train_acc_clean_only': 0.8648698466012656,
+ 'train_asr_bd_only': 0.09718670076726342,
+ 'train_cross_acc_only': 0.7595907928388747,
+ 'train_epoch_loss_avg_over_batch': 0.42815101756464186,
+ 'train_ra_bd_only': 0.7979539641943734}
+2026-10-07:13:47:10 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:47:10 [INFO    ] [wanet.py:399] Epoch 11:
+2026-10-07:13:47:10 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:47:19 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:47:19 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:47:21 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0105, eval sets rebuilt with current trigger
+2026-10-07:13:47:24 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 4.989527480703004,
+ 'clean_test_loss_avg_over_batch': 0.4366969334173806,
+ 'cross_test_loss_avg_over_batch': 0.6370677174646643,
+ 'epoch': 10,
+ 'ra_test_loss_avg_over_batch': 0.5847661218173067,
+ 'test_acc': 0.8545,
+ 'test_asr': 0.018111111111111113,
+ 'test_cross_acc': 0.7903,
+ 'test_ra': 0.8106666666666666,
+ 'train_acc': 0.86506,
+ 'train_acc_clean_only': 0.872365699305712,
+ 'train_asr_bd_only': 0.12276214833759591,
+ 'train_cross_acc_only': 0.7800511508951407,
+ 'train_epoch_loss_avg_over_batch': 0.407393380199247,
+ 'train_ra_bd_only': 0.8337595907928389}
+2026-10-07:13:47:25 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:47:25 [INFO    ] [wanet.py:399] Epoch 12:
+2026-10-07:13:47:25 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:47:34 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:47:34 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:47:35 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0125, eval sets rebuilt with current trigger
+2026-10-07:13:47:39 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 4.321190185949836,
+ 'clean_test_loss_avg_over_batch': 0.4650988541071928,
+ 'cross_test_loss_avg_over_batch': 0.7875066905082027,
+ 'epoch': 11,
+ 'ra_test_loss_avg_over_batch': 0.6374119599940071,
+ 'test_acc': 0.8514,
+ 'test_asr': 0.03677777777777778,
+ 'test_cross_acc': 0.7538,
+ 'test_ra': 0.7966666666666666,
+ 'train_acc': 0.87142,
+ 'train_acc_clean_only': 0.8788654515666598,
+ 'train_asr_bd_only': 0.09743589743589744,
+ 'train_cross_acc_only': 0.7923076923076923,
+ 'train_epoch_loss_avg_over_batch': 0.389812221726798,
+ 'train_ra_bd_only': 0.8641025641025641}
+2026-10-07:13:47:39 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:47:39 [INFO    ] [wanet.py:399] Epoch 13:
+2026-10-07:13:47:39 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:47:48 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:47:48 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:47:50 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0145, eval sets rebuilt with current trigger
+2026-10-07:13:47:54 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 4.803246679440351,
+ 'clean_test_loss_avg_over_batch': 0.46024423988559576,
+ 'cross_test_loss_avg_over_batch': 0.65875786505168,
+ 'epoch': 12,
+ 'ra_test_loss_avg_over_batch': 0.5077610771420976,
+ 'test_acc': 0.8495,
+ 'test_asr': 0.027,
+ 'test_cross_acc': 0.7905,
+ 'test_ra': 0.8323333333333334,
+ 'train_acc': 0.8748,
+ 'train_acc_clean_only': 0.882339689106437,
+ 'train_asr_bd_only': 0.12020460358056266,
+ 'train_cross_acc_only': 0.7813299232736572,
+ 'train_epoch_loss_avg_over_batch': 0.37794180629808277,
+ 'train_ra_bd_only': 0.8439897698209718}
+2026-10-07:13:47:54 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:47:54 [INFO    ] [wanet.py:399] Epoch 14:
+2026-10-07:13:47:54 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:48:03 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:48:03 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:48:05 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0168, eval sets rebuilt with current trigger
+2026-10-07:13:48:08 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 4.105878107984301,
+ 'clean_test_loss_avg_over_batch': 0.4882372229159633,
+ 'cross_test_loss_avg_over_batch': 0.7597941028166421,
+ 'epoch': 13,
+ 'ra_test_loss_avg_over_batch': 0.6111331078368174,
+ 'test_acc': 0.8533,
+ 'test_asr': 0.04088888888888889,
+ 'test_cross_acc': 0.7708,
+ 'test_ra': 0.815,
+ 'train_acc': 0.88188,
+ 'train_acc_clean_only': 0.8899174636983637,
+ 'train_asr_bd_only': 0.11253196930946291,
+ 'train_cross_acc_only': 0.7647058823529411,
+ 'train_epoch_loss_avg_over_batch': 0.3552165741048506,
+ 'train_ra_bd_only': 0.8695652173913043}
+2026-10-07:13:48:09 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:48:09 [INFO    ] [wanet.py:399] Epoch 15:
+2026-10-07:13:48:09 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:48:17 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:48:17 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:48:19 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0192, eval sets rebuilt with current trigger
+2026-10-07:13:48:23 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 4.604763010857811,
+ 'clean_test_loss_avg_over_batch': 0.33677143612994426,
+ 'cross_test_loss_avg_over_batch': 0.5255818197244331,
+ 'epoch': 14,
+ 'ra_test_loss_avg_over_batch': 0.4882194974892576,
+ 'test_acc': 0.8896,
+ 'test_asr': 0.025555555555555557,
+ 'test_cross_acc': 0.8221,
+ 'test_ra': 0.8423333333333334,
+ 'train_acc': 0.8893,
+ 'train_acc_clean_only': 0.8967028466106901,
+ 'train_asr_bd_only': 0.12307692307692308,
+ 'train_cross_acc_only': 0.808974358974359,
+ 'train_epoch_loss_avg_over_batch': 0.33537519042906555,
+ 'train_ra_bd_only': 0.8641025641025641}
+2026-10-07:13:48:23 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:48:23 [INFO    ] [wanet.py:399] Epoch 16:
+2026-10-07:13:48:23 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:48:31 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:48:31 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:48:33 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0218, eval sets rebuilt with current trigger
+2026-10-07:13:48:36 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 3.27934111675746,
+ 'clean_test_loss_avg_over_batch': 0.4367714218700988,
+ 'cross_test_loss_avg_over_batch': 0.7442042748384838,
+ 'epoch': 15,
+ 'ra_test_loss_avg_over_batch': 0.7155469148091866,
+ 'test_acc': 0.8668,
+ 'test_asr': 0.11288888888888889,
+ 'test_cross_acc': 0.77,
+ 'test_ra': 0.7668888888888888,
+ 'train_acc': 0.88938,
+ 'train_acc_clean_only': 0.8967374608310975,
+ 'train_asr_bd_only': 0.09462915601023018,
+ 'train_cross_acc_only': 0.8273657289002557,
+ 'train_epoch_loss_avg_over_batch': 0.33210694286829373,
+ 'train_ra_bd_only': 0.8670076726342711}
+2026-10-07:13:48:36 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:48:36 [INFO    ] [wanet.py:399] Epoch 17:
+2026-10-07:13:48:36 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:48:45 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:48:45 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:48:47 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0249, eval sets rebuilt with current trigger
+2026-10-07:13:48:50 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 3.431864812340535,
+ 'clean_test_loss_avg_over_batch': 0.5226961310151257,
+ 'cross_test_loss_avg_over_batch': 0.8215190738062316,
+ 'epoch': 16,
+ 'ra_test_loss_avg_over_batch': 0.7827375195395778,
+ 'test_acc': 0.837,
+ 'test_asr': 0.11977777777777777,
+ 'test_cross_acc': 0.7624,
+ 'test_ra': 0.7431111111111111,
+ 'train_acc': 0.89626,
+ 'train_acc_clean_only': 0.9042128330636738,
+ 'train_asr_bd_only': 0.10997442455242967,
+ 'train_cross_acc_only': 0.7928388746803069,
+ 'train_epoch_loss_avg_over_batch': 0.3143320524174234,
+ 'train_ra_bd_only': 0.8491048593350383}
+2026-10-07:13:48:51 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:48:51 [INFO    ] [wanet.py:399] Epoch 18:
+2026-10-07:13:48:51 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:48:59 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:48:59 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:49:01 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0277, eval sets rebuilt with current trigger
+2026-10-07:13:49:04 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 2.988793524218277,
+ 'clean_test_loss_avg_over_batch': 0.4117699725718438,
+ 'cross_test_loss_avg_over_batch': 0.6361492083796972,
+ 'epoch': 17,
+ 'ra_test_loss_avg_over_batch': 0.7449833154678345,
+ 'test_acc': 0.8676,
+ 'test_asr': 0.18355555555555556,
+ 'test_cross_acc': 0.7998,
+ 'test_ra': 0.7326666666666667,
+ 'train_acc': 0.89836,
+ 'train_acc_clean_only': 0.906260880250681,
+ 'train_asr_bd_only': 0.12531969309462915,
+ 'train_cross_acc_only': 0.7915601023017903,
+ 'train_epoch_loss_avg_over_batch': 0.3036527034000058,
+ 'train_ra_bd_only': 0.8670076726342711}
+2026-10-07:13:49:04 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:49:04 [INFO    ] [wanet.py:399] Epoch 19:
+2026-10-07:13:49:04 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:49:13 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:49:13 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:49:15 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0309, eval sets rebuilt with current trigger
+2026-10-07:13:49:18 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 3.6809508229645207,
+ 'clean_test_loss_avg_over_batch': 0.3784895031889783,
+ 'cross_test_loss_avg_over_batch': 0.6506151734273645,
+ 'epoch': 18,
+ 'ra_test_loss_avg_over_batch': 0.6620874929596001,
+ 'test_acc': 0.8824,
+ 'test_asr': 0.10922222222222222,
+ 'test_cross_acc': 0.8008,
+ 'test_ra': 0.7818888888888889,
+ 'train_acc': 0.90372,
+ 'train_acc_clean_only': 0.9112581153869785,
+ 'train_asr_bd_only': 0.1329923273657289,
+ 'train_cross_acc_only': 0.8184143222506394,
+ 'train_epoch_loss_avg_over_batch': 0.29193808849129227,
+ 'train_ra_bd_only': 0.8593350383631714}
+2026-10-07:13:49:18 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:49:18 [INFO    ] [wanet.py:399] Epoch 20:
+2026-10-07:13:49:18 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:49:27 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:49:27 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:49:29 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0340, eval sets rebuilt with current trigger
+2026-10-07:13:49:32 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 4.707392296320956,
+ 'clean_test_loss_avg_over_batch': 0.3948324590544157,
+ 'cross_test_loss_avg_over_batch': 0.6433491733255265,
+ 'epoch': 19,
+ 'ra_test_loss_avg_over_batch': 0.7221180775635679,
+ 'test_acc': 0.8764,
+ 'test_asr': 0.025777777777777778,
+ 'test_cross_acc': 0.8031,
+ 'test_ra': 0.7883333333333333,
+ 'train_acc': 0.9099,
+ 'train_acc_clean_only': 0.9172230186360844,
+ 'train_asr_bd_only': 0.13076923076923078,
+ 'train_cross_acc_only': 0.841025641025641,
+ 'train_epoch_loss_avg_over_batch': 0.2723350902766828,
+ 'train_ra_bd_only': 0.8564102564102564}
+2026-10-07:13:49:32 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:49:32 [INFO    ] [wanet.py:399] Epoch 21:
+2026-10-07:13:49:32 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:49:41 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:49:41 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:49:43 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0372, eval sets rebuilt with current trigger
+2026-10-07:13:49:46 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 2.3965067410133254,
+ 'clean_test_loss_avg_over_batch': 0.39504558489292485,
+ 'cross_test_loss_avg_over_batch': 0.6019601950162574,
+ 'epoch': 20,
+ 'ra_test_loss_avg_over_batch': 0.951262244876002,
+ 'test_acc': 0.8756,
+ 'test_asr': 0.265,
+ 'test_cross_acc': 0.8124,
+ 'test_ra': 0.6598888888888889,
+ 'train_acc': 0.91034,
+ 'train_acc_clean_only': 0.9178578742576285,
+ 'train_asr_bd_only': 0.14358974358974358,
+ 'train_cross_acc_only': 0.823076923076923,
+ 'train_epoch_loss_avg_over_batch': 0.27004783188976594,
+ 'train_ra_bd_only': 0.8589743589743589}
+2026-10-07:13:49:46 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:49:46 [INFO    ] [wanet.py:399] Epoch 22:
+2026-10-07:13:49:46 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:49:55 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:49:55 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:49:57 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0404, eval sets rebuilt with current trigger
+2026-10-07:13:50:00 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.7942611650681832,
+ 'clean_test_loss_avg_over_batch': 0.4242343246182309,
+ 'cross_test_loss_avg_over_batch': 0.7116506035569348,
+ 'epoch': 21,
+ 'ra_test_loss_avg_over_batch': 1.309855576971887,
+ 'test_acc': 0.8612,
+ 'test_asr': 0.3537777777777778,
+ 'test_cross_acc': 0.7795,
+ 'test_ra': 0.5534444444444444,
+ 'train_acc': 0.91318,
+ 'train_acc_clean_only': 0.920704484947778,
+ 'train_asr_bd_only': 0.11538461538461539,
+ 'train_cross_acc_only': 0.841025641025641,
+ 'train_epoch_loss_avg_over_batch': 0.26262643150127757,
+ 'train_ra_bd_only': 0.8641025641025641}
+2026-10-07:13:50:01 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:50:01 [INFO    ] [wanet.py:399] Epoch 23:
+2026-10-07:13:50:01 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:50:09 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:50:09 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:50:11 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0440, eval sets rebuilt with current trigger
+2026-10-07:13:50:14 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 4.53951706684811,
+ 'clean_test_loss_avg_over_batch': 0.35659568238107464,
+ 'cross_test_loss_avg_over_batch': 0.6652223490461519,
+ 'epoch': 22,
+ 'ra_test_loss_avg_over_batch': 0.526651617087109,
+ 'test_acc': 0.8925,
+ 'test_asr': 0.043,
+ 'test_cross_acc': 0.8043,
+ 'test_ra': 0.8374444444444444,
+ 'train_acc': 0.91696,
+ 'train_acc_clean_only': 0.924795707293096,
+ 'train_asr_bd_only': 0.11508951406649616,
+ 'train_cross_acc_only': 0.8286445012787724,
+ 'train_epoch_loss_avg_over_batch': 0.2512529967233653,
+ 'train_ra_bd_only': 0.8721227621483376}
+2026-10-07:13:50:15 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:50:15 [INFO    ] [wanet.py:399] Epoch 24:
+2026-10-07:13:50:15 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:50:24 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:50:24 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:50:26 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0475, eval sets rebuilt with current trigger
+2026-10-07:13:50:29 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 3.5124515479719136,
+ 'clean_test_loss_avg_over_batch': 0.33709198387363287,
+ 'cross_test_loss_avg_over_batch': 0.622196815813644,
+ 'epoch': 23,
+ 'ra_test_loss_avg_over_batch': 0.6608721865734584,
+ 'test_acc': 0.8926,
+ 'test_asr': 0.08222222222222222,
+ 'test_cross_acc': 0.8079,
+ 'test_ra': 0.7852222222222223,
+ 'train_acc': 0.91846,
+ 'train_acc_clean_only': 0.9262338726192915,
+ 'train_asr_bd_only': 0.1564102564102564,
+ 'train_cross_acc_only': 0.8128205128205128,
+ 'train_epoch_loss_avg_over_batch': 0.24634404265133622,
+ 'train_ra_bd_only': 0.8692307692307693}
+2026-10-07:13:50:29 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:50:29 [INFO    ] [wanet.py:399] Epoch 25:
+2026-10-07:13:50:29 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:50:38 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:50:38 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:50:40 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0512, eval sets rebuilt with current trigger
+2026-10-07:13:50:44 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 2.9333289173287405,
+ 'clean_test_loss_avg_over_batch': 0.3850197284659253,
+ 'cross_test_loss_avg_over_batch': 0.6994191325163539,
+ 'epoch': 24,
+ 'ra_test_loss_avg_over_batch': 0.8356105080792602,
+ 'test_acc': 0.8873,
+ 'test_asr': 0.184,
+ 'test_cross_acc': 0.7943,
+ 'test_ra': 0.7232222222222222,
+ 'train_acc': 0.91964,
+ 'train_acc_clean_only': 0.9274786491080754,
+ 'train_asr_bd_only': 0.12276214833759591,
+ 'train_cross_acc_only': 0.8286445012787724,
+ 'train_epoch_loss_avg_over_batch': 0.24125752175021964,
+ 'train_ra_bd_only': 0.8542199488491049}
+2026-10-07:13:50:44 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:50:44 [INFO    ] [wanet.py:399] Epoch 26:
+2026-10-07:13:50:44 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:50:53 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:50:53 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:50:54 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0550, eval sets rebuilt with current trigger
+2026-10-07:13:50:58 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 2.668916708986524,
+ 'clean_test_loss_avg_over_batch': 0.422357337525751,
+ 'cross_test_loss_avg_over_batch': 0.6528473802005188,
+ 'epoch': 25,
+ 'ra_test_loss_avg_over_batch': 0.9342001130883123,
+ 'test_acc': 0.8697,
+ 'test_asr': 0.1847777777777778,
+ 'test_cross_acc': 0.8079,
+ 'test_ra': 0.6902222222222222,
+ 'train_acc': 0.92478,
+ 'train_acc_clean_only': 0.932762610850554,
+ 'train_asr_bd_only': 0.11764705882352941,
+ 'train_cross_acc_only': 0.829923273657289,
+ 'train_epoch_loss_avg_over_batch': 0.2291750642078002,
+ 'train_ra_bd_only': 0.8439897698209718}
+2026-10-07:13:50:58 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:50:58 [INFO    ] [wanet.py:399] Epoch 27:
+2026-10-07:13:50:58 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:51:07 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:51:07 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:51:09 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0587, eval sets rebuilt with current trigger
+2026-10-07:13:51:12 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 3.95942531840902,
+ 'clean_test_loss_avg_over_batch': 0.35435657882237737,
+ 'cross_test_loss_avg_over_batch': 0.7007807723329037,
+ 'epoch': 26,
+ 'ra_test_loss_avg_over_batch': 0.6086594995478509,
+ 'test_acc': 0.8917,
+ 'test_asr': 0.074,
+ 'test_cross_acc': 0.8017,
+ 'test_ra': 0.8096666666666666,
+ 'train_acc': 0.92408,
+ 'train_acc_clean_only': 0.9317795482007906,
+ 'train_asr_bd_only': 0.1636828644501279,
+ 'train_cross_acc_only': 0.8235294117647058,
+ 'train_epoch_loss_avg_over_batch': 0.22327823773064576,
+ 'train_ra_bd_only': 0.8593350383631714}
+2026-10-07:13:51:13 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:51:13 [INFO    ] [wanet.py:399] Epoch 28:
+2026-10-07:13:51:13 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:51:21 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:51:21 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:51:24 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0625, eval sets rebuilt with current trigger
+2026-10-07:13:51:27 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 2.6208421948929908,
+ 'clean_test_loss_avg_over_batch': 0.32846915778479996,
+ 'cross_test_loss_avg_over_batch': 0.6046339605427995,
+ 'epoch': 27,
+ 'ra_test_loss_avg_over_batch': 0.8992411737710657,
+ 'test_acc': 0.9007,
+ 'test_asr': 0.2252222222222222,
+ 'test_cross_acc': 0.8198,
+ 'test_ra': 0.6893333333333334,
+ 'train_acc': 0.9271,
+ 'train_acc_clean_only': 0.9346303501945525,
+ 'train_asr_bd_only': 0.18205128205128204,
+ 'train_cross_acc_only': 0.8282051282051283,
+ 'train_epoch_loss_avg_over_batch': 0.2192270807979052,
+ 'train_ra_bd_only': 0.8128205128205128}
+2026-10-07:13:51:27 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:51:27 [INFO    ] [wanet.py:399] Epoch 29:
+2026-10-07:13:51:27 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:51:36 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:51:36 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:51:38 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0665, eval sets rebuilt with current trigger
+2026-10-07:13:51:41 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 2.5344259873242447,
+ 'clean_test_loss_avg_over_batch': 0.35221025611780865,
+ 'cross_test_loss_avg_over_batch': 0.6426048931441729,
+ 'epoch': 28,
+ 'ra_test_loss_avg_over_batch': 0.923595302541491,
+ 'test_acc': 0.8938,
+ 'test_asr': 0.20955555555555555,
+ 'test_cross_acc': 0.8126,
+ 'test_ra': 0.6807777777777778,
+ 'train_acc': 0.93096,
+ 'train_acc_clean_only': 0.9380056116492924,
+ 'train_asr_bd_only': 0.15601023017902813,
+ 'train_cross_acc_only': 0.8785166240409207,
+ 'train_epoch_loss_avg_over_batch': 0.2094956819739793,
+ 'train_ra_bd_only': 0.8695652173913043}
+2026-10-07:13:51:42 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:51:42 [INFO    ] [wanet.py:399] Epoch 30:
+2026-10-07:13:51:42 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:51:50 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:51:50 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:51:52 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0703, eval sets rebuilt with current trigger
+2026-10-07:13:51:56 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.1786160024119094,
+ 'clean_test_loss_avg_over_batch': 0.41805973649024963,
+ 'cross_test_loss_avg_over_batch': 0.6093821529346176,
+ 'epoch': 29,
+ 'ra_test_loss_avg_over_batch': 1.9816360490422853,
+ 'test_acc': 0.8628,
+ 'test_asr': 0.5885555555555556,
+ 'test_cross_acc': 0.8201,
+ 'test_ra': 0.382,
+ 'train_acc': 0.93234,
+ 'train_acc_clean_only': 0.9398283736457288,
+ 'train_asr_bd_only': 0.17647058823529413,
+ 'train_cross_acc_only': 0.8427109974424553,
+ 'train_epoch_loss_avg_over_batch': 0.2046425873437501,
+ 'train_ra_bd_only': 0.8209718670076727}
+2026-10-07:13:51:56 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:51:56 [INFO    ] [wanet.py:399] Epoch 31:
+2026-10-07:13:51:56 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:52:05 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:52:05 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:52:07 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0746, eval sets rebuilt with current trigger
+2026-10-07:13:52:10 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.908439898155105,
+ 'clean_test_loss_avg_over_batch': 0.33950357384319546,
+ 'cross_test_loss_avg_over_batch': 0.5816210108467296,
+ 'epoch': 30,
+ 'ra_test_loss_avg_over_batch': 1.201188412350668,
+ 'test_acc': 0.8968,
+ 'test_asr': 0.374,
+ 'test_cross_acc': 0.8241,
+ 'test_ra': 0.571,
+ 'train_acc': 0.93236,
+ 'train_acc_clean_only': 0.9398488541175989,
+ 'train_asr_bd_only': 0.19437340153452684,
+ 'train_cross_acc_only': 0.8337595907928389,
+ 'train_epoch_loss_avg_over_batch': 0.20372704616592974,
+ 'train_ra_bd_only': 0.8388746803069054}
+2026-10-07:13:52:11 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:52:11 [INFO    ] [wanet.py:399] Epoch 32:
+2026-10-07:13:52:11 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:52:20 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:52:20 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:52:21 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0787, eval sets rebuilt with current trigger
+2026-10-07:13:52:25 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 2.3463655357629483,
+ 'clean_test_loss_avg_over_batch': 0.3751812386739103,
+ 'cross_test_loss_avg_over_batch': 0.7119856544687778,
+ 'epoch': 31,
+ 'ra_test_loss_avg_over_batch': 1.295433865466588,
+ 'test_acc': 0.8807,
+ 'test_asr': 0.3488888888888889,
+ 'test_cross_acc': 0.7945,
+ 'test_ra': 0.5841111111111111,
+ 'train_acc': 0.93266,
+ 'train_acc_clean_only': 0.9401355807237799,
+ 'train_asr_bd_only': 0.1918158567774936,
+ 'train_cross_acc_only': 0.8363171355498721,
+ 'train_epoch_loss_avg_over_batch': 0.19874587570271834,
+ 'train_ra_bd_only': 0.8286445012787724}
+2026-10-07:13:52:25 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:52:25 [INFO    ] [wanet.py:399] Epoch 33:
+2026-10-07:13:52:25 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:52:34 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:52:34 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:52:36 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0835, eval sets rebuilt with current trigger
+2026-10-07:13:52:40 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 2.3931167293602313,
+ 'clean_test_loss_avg_over_batch': 0.31333209083804603,
+ 'cross_test_loss_avg_over_batch': 0.6440875598146946,
+ 'epoch': 32,
+ 'ra_test_loss_avg_over_batch': 1.14578137347396,
+ 'test_acc': 0.9029,
+ 'test_asr': 0.28733333333333333,
+ 'test_cross_acc': 0.813,
+ 'test_ra': 0.6266666666666667,
+ 'train_acc': 0.93656,
+ 'train_acc_clean_only': 0.9437606242447826,
+ 'train_asr_bd_only': 0.17391304347826086,
+ 'train_cross_acc_only': 0.8682864450127877,
+ 'train_epoch_loss_avg_over_batch': 0.18964162468910217,
+ 'train_ra_bd_only': 0.8414322250639387}
+2026-10-07:13:52:40 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:52:40 [INFO    ] [wanet.py:399] Epoch 34:
+2026-10-07:13:52:40 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:52:49 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:52:49 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:52:51 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0880, eval sets rebuilt with current trigger
+2026-10-07:13:52:54 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 2.8888834731679567,
+ 'clean_test_loss_avg_over_batch': 0.31785730828967274,
+ 'cross_test_loss_avg_over_batch': 0.6444359742387941,
+ 'epoch': 33,
+ 'ra_test_loss_avg_over_batch': 0.6902411907491549,
+ 'test_acc': 0.9004,
+ 'test_asr': 0.16344444444444445,
+ 'test_cross_acc': 0.8119,
+ 'test_ra': 0.7548888888888889,
+ 'train_acc': 0.93834,
+ 'train_acc_clean_only': 0.9459315542630102,
+ 'train_asr_bd_only': 0.18925831202046037,
+ 'train_cross_acc_only': 0.8388746803069054,
+ 'train_epoch_loss_avg_over_batch': 0.18767826305821422,
+ 'train_ra_bd_only': 0.7979539641943734}
+2026-10-07:13:52:55 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:52:55 [INFO    ] [wanet.py:399] Epoch 35:
+2026-10-07:13:52:55 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:53:03 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:53:03 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:53:05 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0924, eval sets rebuilt with current trigger
+2026-10-07:13:53:08 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 2.82728201906446,
+ 'clean_test_loss_avg_over_batch': 0.36441646648358694,
+ 'cross_test_loss_avg_over_batch': 0.794020555064648,
+ 'epoch': 34,
+ 'ra_test_loss_avg_over_batch': 0.8843432908326807,
+ 'test_acc': 0.8907,
+ 'test_asr': 0.2431111111111111,
+ 'test_cross_acc': 0.7874,
+ 'test_ra': 0.6833333333333333,
+ 'train_acc': 0.9388,
+ 'train_acc_clean_only': 0.946262543518329,
+ 'train_asr_bd_only': 0.20256410256410257,
+ 'train_cross_acc_only': 0.8397435897435898,
+ 'train_epoch_loss_avg_over_batch': 0.1789170071730376,
+ 'train_ra_bd_only': 0.7769230769230769}
+2026-10-07:13:53:08 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:53:08 [INFO    ] [wanet.py:399] Epoch 36:
+2026-10-07:13:53:08 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:53:16 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:53:16 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:53:18 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.0965, eval sets rebuilt with current trigger
+2026-10-07:13:53:22 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 3.414456192876252,
+ 'clean_test_loss_avg_over_batch': 0.32429911422578594,
+ 'cross_test_loss_avg_over_batch': 0.5801185395898698,
+ 'epoch': 35,
+ 'ra_test_loss_avg_over_batch': 0.7109396092488732,
+ 'test_acc': 0.9053,
+ 'test_asr': 0.13055555555555556,
+ 'test_cross_acc': 0.8223,
+ 'test_ra': 0.7654444444444445,
+ 'train_acc': 0.94068,
+ 'train_acc_clean_only': 0.9480032766741757,
+ 'train_asr_bd_only': 0.23076923076923078,
+ 'train_cross_acc_only': 0.8371794871794872,
+ 'train_epoch_loss_avg_over_batch': 0.17891558612246647,
+ 'train_ra_bd_only': 0.8333333333333334}
+2026-10-07:13:53:22 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:53:22 [INFO    ] [wanet.py:399] Epoch 37:
+2026-10-07:13:53:22 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:53:30 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:53:30 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:53:32 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.1010, eval sets rebuilt with current trigger
+2026-10-07:13:53:35 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.9779478957955267,
+ 'clean_test_loss_avg_over_batch': 0.3808650504561919,
+ 'cross_test_loss_avg_over_batch': 0.6088509276697908,
+ 'epoch': 36,
+ 'ra_test_loss_avg_over_batch': 2.185004237671973,
+ 'test_acc': 0.8809,
+ 'test_asr': 0.6273333333333333,
+ 'test_cross_acc': 0.8219,
+ 'test_ra': 0.3403333333333333,
+ 'train_acc': 0.93872,
+ 'train_acc_clean_only': 0.9462011058775343,
+ 'train_asr_bd_only': 0.18205128205128204,
+ 'train_cross_acc_only': 0.8487179487179487,
+ 'train_epoch_loss_avg_over_batch': 0.18279049460730895,
+ 'train_ra_bd_only': 0.8256410256410256}
+2026-10-07:13:53:36 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:53:36 [INFO    ] [wanet.py:399] Epoch 38:
+2026-10-07:13:53:36 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:53:45 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:53:45 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:53:47 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.1056, eval sets rebuilt with current trigger
+2026-10-07:13:53:50 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.7531676174889148,
+ 'clean_test_loss_avg_over_batch': 0.35466345333600346,
+ 'cross_test_loss_avg_over_batch': 0.6461019549943223,
+ 'epoch': 37,
+ 'ra_test_loss_avg_over_batch': 1.3543391311672373,
+ 'test_acc': 0.8996,
+ 'test_asr': 0.4191111111111111,
+ 'test_cross_acc': 0.8169,
+ 'test_ra': 0.5288888888888889,
+ 'train_acc': 0.9454,
+ 'train_acc_clean_only': 0.9528744342269646,
+ 'train_asr_bd_only': 0.22762148337595908,
+ 'train_cross_acc_only': 0.8375959079283888,
+ 'train_epoch_loss_avg_over_batch': 0.16587290111595712,
+ 'train_ra_bd_only': 0.7979539641943734}
+2026-10-07:13:53:51 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:53:51 [INFO    ] [wanet.py:399] Epoch 39:
+2026-10-07:13:53:51 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:53:59 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:53:59 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:54:01 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.1103, eval sets rebuilt with current trigger
+2026-10-07:13:54:04 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 2.0829330195843334,
+ 'clean_test_loss_avg_over_batch': 0.3302746973460234,
+ 'cross_test_loss_avg_over_batch': 0.6229970643791971,
+ 'epoch': 38,
+ 'ra_test_loss_avg_over_batch': 1.4405947403169015,
+ 'test_acc': 0.9003,
+ 'test_asr': 0.4061111111111111,
+ 'test_cross_acc': 0.822,
+ 'test_ra': 0.5443333333333333,
+ 'train_acc': 0.94558,
+ 'train_acc_clean_only': 0.9523009810146026,
+ 'train_asr_bd_only': 0.26342710997442453,
+ 'train_cross_acc_only': 0.8670076726342711,
+ 'train_epoch_loss_avg_over_batch': 0.15997606869358236,
+ 'train_ra_bd_only': 0.7698209718670077}
+2026-10-07:13:54:05 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:54:05 [INFO    ] [wanet.py:399] Epoch 40:
+2026-10-07:13:54:05 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:54:13 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:54:13 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:54:15 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.1148, eval sets rebuilt with current trigger
+2026-10-07:13:54:18 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 2.2775572320105324,
+ 'clean_test_loss_avg_over_batch': 0.3334962793543369,
+ 'cross_test_loss_avg_over_batch': 0.5564019261281702,
+ 'epoch': 39,
+ 'ra_test_loss_avg_over_batch': 1.3100749673977705,
+ 'test_acc': 0.9058,
+ 'test_asr': 0.33566666666666667,
+ 'test_cross_acc': 0.8404,
+ 'test_ra': 0.5901111111111111,
+ 'train_acc': 0.94394,
+ 'train_acc_clean_only': 0.9509287893993078,
+ 'train_asr_bd_only': 0.25831202046035806,
+ 'train_cross_acc_only': 0.850383631713555,
+ 'train_epoch_loss_avg_over_batch': 0.16561874099399732,
+ 'train_ra_bd_only': 0.7672634271099744}
+2026-10-07:13:54:18 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:54:18 [INFO    ] [wanet.py:399] Epoch 41:
+2026-10-07:13:54:18 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:54:27 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:54:27 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:54:30 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.1195, eval sets rebuilt with current trigger
+2026-10-07:13:54:33 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 2.5069680919109936,
+ 'clean_test_loss_avg_over_batch': 0.350381429059596,
+ 'cross_test_loss_avg_over_batch': 0.605534390369548,
+ 'epoch': 40,
+ 'ra_test_loss_avg_over_batch': 0.9287907833784399,
+ 'test_acc': 0.8999,
+ 'test_asr': 0.25677777777777777,
+ 'test_cross_acc': 0.8192,
+ 'test_ra': 0.6751111111111111,
+ 'train_acc': 0.9463,
+ 'train_acc_clean_only': 0.9532254761417162,
+ 'train_asr_bd_only': 0.258974358974359,
+ 'train_cross_acc_only': 0.8564102564102564,
+ 'train_epoch_loss_avg_over_batch': 0.15658090222636453,
+ 'train_ra_bd_only': 0.7794871794871795}
+2026-10-07:13:54:33 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:54:33 [INFO    ] [wanet.py:399] Epoch 42:
+2026-10-07:13:54:33 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:54:42 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:54:42 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:54:44 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.1241, eval sets rebuilt with current trigger
+2026-10-07:13:54:47 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.2352142350774415,
+ 'clean_test_loss_avg_over_batch': 0.341238195383096,
+ 'cross_test_loss_avg_over_batch': 0.5594089927175377,
+ 'epoch': 41,
+ 'ra_test_loss_avg_over_batch': 2.0629596357614224,
+ 'test_acc': 0.9016,
+ 'test_asr': 0.5686666666666667,
+ 'test_cross_acc': 0.8359,
+ 'test_ra': 0.397,
+ 'train_acc': 0.94796,
+ 'train_acc_clean_only': 0.9547586376390113,
+ 'train_asr_bd_only': 0.27621483375959077,
+ 'train_cross_acc_only': 0.8593350383631714,
+ 'train_epoch_loss_avg_over_batch': 0.1570718883515319,
+ 'train_ra_bd_only': 0.7698209718670077}
+2026-10-07:13:54:48 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:54:48 [INFO    ] [wanet.py:399] Epoch 43:
+2026-10-07:13:54:48 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:54:57 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:54:57 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:54:59 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.1285, eval sets rebuilt with current trigger
+2026-10-07:13:55:02 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.5298717424903117,
+ 'clean_test_loss_avg_over_batch': 0.346330559612075,
+ 'cross_test_loss_avg_over_batch': 0.6675078819824171,
+ 'epoch': 42,
+ 'ra_test_loss_avg_over_batch': 1.7792444195545896,
+ 'test_acc': 0.8981,
+ 'test_asr': 0.5072222222222222,
+ 'test_cross_acc': 0.8163,
+ 'test_ra': 0.44722222222222224,
+ 'train_acc': 0.9477,
+ 'train_acc_clean_only': 0.9543313536760188,
+ 'train_asr_bd_only': 0.3230769230769231,
+ 'train_cross_acc_only': 0.8448717948717949,
+ 'train_epoch_loss_avg_over_batch': 0.15788220910503126,
+ 'train_ra_bd_only': 0.7205128205128205}
+2026-10-07:13:55:02 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:55:02 [INFO    ] [wanet.py:399] Epoch 44:
+2026-10-07:13:55:02 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:55:10 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:55:10 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:55:12 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.1330, eval sets rebuilt with current trigger
+2026-10-07:13:55:16 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.4435817120780408,
+ 'clean_test_loss_avg_over_batch': 0.3200772119851052,
+ 'cross_test_loss_avg_over_batch': 0.5966217084021508,
+ 'epoch': 43,
+ 'ra_test_loss_avg_over_batch': 1.8015813357393506,
+ 'test_acc': 0.9079,
+ 'test_asr': 0.5358888888888889,
+ 'test_cross_acc': 0.8263,
+ 'test_ra': 0.43244444444444446,
+ 'train_acc': 0.94898,
+ 'train_acc_clean_only': 0.9555983369856842,
+ 'train_asr_bd_only': 0.30434782608695654,
+ 'train_cross_acc_only': 0.8580562659846548,
+ 'train_epoch_loss_avg_over_batch': 0.14934758950606028,
+ 'train_ra_bd_only': 0.7365728900255755}
+2026-10-07:13:55:16 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:55:16 [INFO    ] [wanet.py:399] Epoch 45:
+2026-10-07:13:55:16 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:55:25 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:55:25 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:55:27 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.1372, eval sets rebuilt with current trigger
+2026-10-07:13:55:30 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 2.2361847296567032,
+ 'clean_test_loss_avg_over_batch': 0.3958304315050946,
+ 'cross_test_loss_avg_over_batch': 0.7500172108411789,
+ 'epoch': 44,
+ 'ra_test_loss_avg_over_batch': 1.4003872350907662,
+ 'test_acc': 0.8888,
+ 'test_asr': 0.3567777777777778,
+ 'test_cross_acc': 0.7939,
+ 'test_ra': 0.5751111111111111,
+ 'train_acc': 0.9478,
+ 'train_acc_clean_only': 0.9539803797079485,
+ 'train_asr_bd_only': 0.34271099744245526,
+ 'train_cross_acc_only': 0.8644501278772379,
+ 'train_epoch_loss_avg_over_batch': 0.15496724064621475,
+ 'train_ra_bd_only': 0.7084398976982097}
+2026-10-07:13:55:31 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:55:31 [INFO    ] [wanet.py:399] Epoch 46:
+2026-10-07:13:55:31 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:55:39 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:55:39 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:55:41 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.1414, eval sets rebuilt with current trigger
+2026-10-07:13:55:44 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.369066681660397,
+ 'clean_test_loss_avg_over_batch': 0.32977795487717737,
+ 'cross_test_loss_avg_over_batch': 0.6259683095201661,
+ 'epoch': 45,
+ 'ra_test_loss_avg_over_batch': 2.0743903307847575,
+ 'test_acc': 0.9027,
+ 'test_asr': 0.569,
+ 'test_cross_acc': 0.8185,
+ 'test_ra': 0.3992222222222222,
+ 'train_acc': 0.9522,
+ 'train_acc_clean_only': 0.958404161631884,
+ 'train_asr_bd_only': 0.37595907928388744,
+ 'train_cross_acc_only': 0.8529411764705882,
+ 'train_epoch_loss_avg_over_batch': 0.1418768987488335,
+ 'train_ra_bd_only': 0.6751918158567775}
+2026-10-07:13:55:45 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:55:45 [INFO    ] [wanet.py:399] Epoch 47:
+2026-10-07:13:55:45 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:55:54 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:55:54 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:55:56 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.1459, eval sets rebuilt with current trigger
+2026-10-07:13:55:59 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.9754255867340196,
+ 'clean_test_loss_avg_over_batch': 0.3591422910177255,
+ 'cross_test_loss_avg_over_batch': 0.5856705874770503,
+ 'epoch': 46,
+ 'ra_test_loss_avg_over_batch': 2.618511740590485,
+ 'test_acc': 0.8858,
+ 'test_asr': 0.6577777777777778,
+ 'test_cross_acc': 0.8344,
+ 'test_ra': 0.30466666666666664,
+ 'train_acc': 0.95386,
+ 'train_acc_clean_only': 0.9596559492115503,
+ 'train_asr_bd_only': 0.382051282051282,
+ 'train_cross_acc_only': 0.8769230769230769,
+ 'train_epoch_loss_avg_over_batch': 0.13684618778412452,
+ 'train_ra_bd_only': 0.6897435897435897}
+2026-10-07:13:56:00 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:56:00 [INFO    ] [wanet.py:399] Epoch 48:
+2026-10-07:13:56:00 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:56:09 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:56:09 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:56:11 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.1499, eval sets rebuilt with current trigger
+2026-10-07:13:56:14 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.119136716278506,
+ 'clean_test_loss_avg_over_batch': 0.3561964858370491,
+ 'cross_test_loss_avg_over_batch': 0.7135596335688724,
+ 'epoch': 47,
+ 'ra_test_loss_avg_over_batch': 2.6329767032408378,
+ 'test_acc': 0.8918,
+ 'test_asr': 0.6556666666666666,
+ 'test_cross_acc': 0.8017,
+ 'test_ra': 0.30844444444444447,
+ 'train_acc': 0.95214,
+ 'train_acc_clean_only': 0.958117435025703,
+ 'train_asr_bd_only': 0.38618925831202044,
+ 'train_cross_acc_only': 0.8618925831202046,
+ 'train_epoch_loss_avg_over_batch': 0.143496736155256,
+ 'train_ra_bd_only': 0.6649616368286445}
+2026-10-07:13:56:14 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:56:14 [INFO    ] [wanet.py:399] Epoch 49:
+2026-10-07:13:56:14 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:56:24 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:56:24 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:56:26 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.1544, eval sets rebuilt with current trigger
+2026-10-07:13:56:29 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.639468490237921,
+ 'clean_test_loss_avg_over_batch': 0.2889139500882807,
+ 'cross_test_loss_avg_over_batch': 0.5615784488146818,
+ 'epoch': 48,
+ 'ra_test_loss_avg_over_batch': 1.7595862385252832,
+ 'test_acc': 0.9109,
+ 'test_asr': 0.467,
+ 'test_cross_acc': 0.835,
+ 'test_ra': 0.46155555555555555,
+ 'train_acc': 0.95396,
+ 'train_acc_clean_only': 0.9601859626845802,
+ 'train_asr_bd_only': 0.35294117647058826,
+ 'train_cross_acc_only': 0.8657289002557544,
+ 'train_epoch_loss_avg_over_batch': 0.14056423269307522,
+ 'train_ra_bd_only': 0.7007672634271099}
+2026-10-07:13:56:30 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:56:30 [INFO    ] [wanet.py:399] Epoch 50:
+2026-10-07:13:56:30 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:56:38 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:56:38 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:56:40 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.1583, eval sets rebuilt with current trigger
+2026-10-07:13:56:43 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.6368141342216813,
+ 'clean_test_loss_avg_over_batch': 0.316587686680163,
+ 'cross_test_loss_avg_over_batch': 0.5918282289293748,
+ 'epoch': 49,
+ 'ra_test_loss_avg_over_batch': 1.9694173084178441,
+ 'test_acc': 0.9067,
+ 'test_asr': 0.5438888888888889,
+ 'test_cross_acc': 0.8299,
+ 'test_ra': 0.42744444444444446,
+ 'train_acc': 0.95492,
+ 'train_acc_clean_only': 0.9604751177554782,
+ 'train_asr_bd_only': 0.4128205128205128,
+ 'train_cross_acc_only': 0.8782051282051282,
+ 'train_epoch_loss_avg_over_batch': 0.1327964117812455,
+ 'train_ra_bd_only': 0.6358974358974359}
+2026-10-07:13:56:44 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:56:44 [INFO    ] [wanet.py:399] Epoch 51:
+2026-10-07:13:56:44 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:56:53 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:56:53 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:56:55 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.1628, eval sets rebuilt with current trigger
+2026-10-07:13:56:58 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.4866778313274114,
+ 'clean_test_loss_avg_over_batch': 0.288552329415762,
+ 'cross_test_loss_avg_over_batch': 0.5829550144793112,
+ 'epoch': 50,
+ 'ra_test_loss_avg_over_batch': 2.3361476323973966,
+ 'test_acc': 0.9159,
+ 'test_asr': 0.5335555555555556,
+ 'test_cross_acc': 0.8352,
+ 'test_ra': 0.4161111111111111,
+ 'train_acc': 0.95272,
+ 'train_acc_clean_only': 0.9587113687099351,
+ 'train_asr_bd_only': 0.40664961636828645,
+ 'train_cross_acc_only': 0.8516624040920716,
+ 'train_epoch_loss_avg_over_batch': 0.1375545945085223,
+ 'train_ra_bd_only': 0.6675191815856778}
+2026-10-07:13:56:58 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:56:58 [INFO    ] [wanet.py:399] Epoch 52:
+2026-10-07:13:56:58 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:57:08 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:57:08 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:57:10 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.1671, eval sets rebuilt with current trigger
+2026-10-07:13:57:13 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.409138134667571,
+ 'clean_test_loss_avg_over_batch': 0.3057297587842692,
+ 'cross_test_loss_avg_over_batch': 0.5640754918508892,
+ 'epoch': 51,
+ 'ra_test_loss_avg_over_batch': 2.006906210536688,
+ 'test_acc': 0.9076,
+ 'test_asr': 0.564,
+ 'test_cross_acc': 0.8354,
+ 'test_ra': 0.39155555555555555,
+ 'train_acc': 0.95386,
+ 'train_acc_clean_only': 0.959817314190919,
+ 'train_asr_bd_only': 0.3887468030690537,
+ 'train_cross_acc_only': 0.8644501278772379,
+ 'train_epoch_loss_avg_over_batch': 0.13769995047213018,
+ 'train_ra_bd_only': 0.6419437340153452}
+2026-10-07:13:57:14 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:57:14 [INFO    ] [wanet.py:399] Epoch 53:
+2026-10-07:13:57:14 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:57:23 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:57:23 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:57:25 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.1714, eval sets rebuilt with current trigger
+2026-10-07:13:57:28 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.9986511619997696,
+ 'clean_test_loss_avg_over_batch': 0.2857799288592761,
+ 'cross_test_loss_avg_over_batch': 0.5817618136164509,
+ 'epoch': 52,
+ 'ra_test_loss_avg_over_batch': 1.618120336196792,
+ 'test_acc': 0.918,
+ 'test_asr': 0.44066666666666665,
+ 'test_cross_acc': 0.8357,
+ 'test_ra': 0.5108888888888888,
+ 'train_acc': 0.95498,
+ 'train_acc_clean_only': 0.9608208573125525,
+ 'train_asr_bd_only': 0.4143222506393862,
+ 'train_cross_acc_only': 0.860613810741688,
+ 'train_epoch_loss_avg_over_batch': 0.13391360700549676,
+ 'train_ra_bd_only': 0.6214833759590793}
+2026-10-07:13:57:28 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:57:28 [INFO    ] [wanet.py:399] Epoch 54:
+2026-10-07:13:57:28 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:57:37 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:57:37 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:57:39 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.1754, eval sets rebuilt with current trigger
+2026-10-07:13:57:42 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.833224848962166,
+ 'clean_test_loss_avg_over_batch': 0.3413453814160975,
+ 'cross_test_loss_avg_over_batch': 0.6261537373065948,
+ 'epoch': 53,
+ 'ra_test_loss_avg_over_batch': 3.2757545289858965,
+ 'test_acc': 0.8987,
+ 'test_asr': 0.7153333333333334,
+ 'test_cross_acc': 0.8298,
+ 'test_ra': 0.2594444444444444,
+ 'train_acc': 0.9589,
+ 'train_acc_clean_only': 0.9644868617772954,
+ 'train_asr_bd_only': 0.45012787723785164,
+ 'train_cross_acc_only': 0.8644501278772379,
+ 'train_epoch_loss_avg_over_batch': 0.12578739841347156,
+ 'train_ra_bd_only': 0.5856777493606138}
+2026-10-07:13:57:43 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:57:43 [INFO    ] [wanet.py:399] Epoch 55:
+2026-10-07:13:57:43 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:57:52 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:57:52 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:57:54 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.1795, eval sets rebuilt with current trigger
+2026-10-07:13:57:57 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.9602076083841459,
+ 'clean_test_loss_avg_over_batch': 0.3407027198921276,
+ 'cross_test_loss_avg_over_batch': 0.5957169102717049,
+ 'epoch': 54,
+ 'ra_test_loss_avg_over_batch': 2.6846676309343795,
+ 'test_acc': 0.9029,
+ 'test_asr': 0.6764444444444444,
+ 'test_cross_acc': 0.8359,
+ 'test_ra': 0.29288888888888887,
+ 'train_acc': 0.9573,
+ 'train_acc_clean_only': 0.9627665021402093,
+ 'train_asr_bd_only': 0.46035805626598464,
+ 'train_cross_acc_only': 0.8644501278772379,
+ 'train_epoch_loss_avg_over_batch': 0.125605511543391,
+ 'train_ra_bd_only': 0.5728900255754475}
+2026-10-07:13:57:58 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:57:58 [INFO    ] [wanet.py:399] Epoch 56:
+2026-10-07:13:57:58 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:58:07 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:58:07 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:58:09 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.1834, eval sets rebuilt with current trigger
+2026-10-07:13:58:11 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 2.376103078815299,
+ 'clean_test_loss_avg_over_batch': 0.33118370975974853,
+ 'cross_test_loss_avg_over_batch': 0.6001406206360346,
+ 'epoch': 55,
+ 'ra_test_loss_avg_over_batch': 1.6361948067033794,
+ 'test_acc': 0.9126,
+ 'test_asr': 0.38033333333333336,
+ 'test_cross_acc': 0.8298,
+ 'test_ra': 0.5454444444444444,
+ 'train_acc': 0.96018,
+ 'train_acc_clean_only': 0.9657156900894996,
+ 'train_asr_bd_only': 0.44501278772378516,
+ 'train_cross_acc_only': 0.8721227621483376,
+ 'train_epoch_loss_avg_over_batch': 0.11822472996247546,
+ 'train_ra_bd_only': 0.6086956521739131}
+2026-10-07:13:58:12 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:58:12 [INFO    ] [wanet.py:399] Epoch 57:
+2026-10-07:13:58:12 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:58:21 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:58:21 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:58:23 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.1877, eval sets rebuilt with current trigger
+2026-10-07:13:58:26 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.6842587225034203,
+ 'clean_test_loss_avg_over_batch': 0.3355158846589583,
+ 'cross_test_loss_avg_over_batch': 0.5876033412693422,
+ 'epoch': 56,
+ 'ra_test_loss_avg_over_batch': 3.7939865219760947,
+ 'test_acc': 0.9063,
+ 'test_asr': 0.7716666666666666,
+ 'test_cross_acc': 0.8387,
+ 'test_ra': 0.20777777777777778,
+ 'train_acc': 0.959,
+ 'train_acc_clean_only': 0.9650193540459172,
+ 'train_asr_bd_only': 0.4398976982097187,
+ 'train_cross_acc_only': 0.8427109974424553,
+ 'train_epoch_loss_avg_over_batch': 0.12299523517356047,
+ 'train_ra_bd_only': 0.6163682864450127}
+2026-10-07:13:58:26 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:58:26 [INFO    ] [wanet.py:399] Epoch 58:
+2026-10-07:13:58:26 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:58:35 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:58:35 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:58:37 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.1917, eval sets rebuilt with current trigger
+2026-10-07:13:58:40 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.6638286743365543,
+ 'clean_test_loss_avg_over_batch': 0.3472787215362621,
+ 'cross_test_loss_avg_over_batch': 0.6253992088987858,
+ 'epoch': 57,
+ 'ra_test_loss_avg_over_batch': 3.3022432898131893,
+ 'test_acc': 0.8971,
+ 'test_asr': 0.7696666666666667,
+ 'test_cross_acc': 0.8227,
+ 'test_ra': 0.21144444444444443,
+ 'train_acc': 0.9553,
+ 'train_acc_clean_only': 0.9607389354250722,
+ 'train_asr_bd_only': 0.4782608695652174,
+ 'train_cross_acc_only': 0.8542199488491049,
+ 'train_epoch_loss_avg_over_batch': 0.13115744425169648,
+ 'train_ra_bd_only': 0.5652173913043478}
+2026-10-07:13:58:41 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:58:41 [INFO    ] [wanet.py:399] Epoch 59:
+2026-10-07:13:58:41 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:58:50 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:58:50 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:58:52 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.1952, eval sets rebuilt with current trigger
+2026-10-07:13:58:55 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.3948442020886381,
+ 'clean_test_loss_avg_over_batch': 0.4273300478352776,
+ 'cross_test_loss_avg_over_batch': 0.616860964252979,
+ 'epoch': 58,
+ 'ra_test_loss_avg_over_batch': 4.679526057041866,
+ 'test_acc': 0.8778,
+ 'test_asr': 0.8526666666666667,
+ 'test_cross_acc': 0.83,
+ 'test_ra': 0.13,
+ 'train_acc': 0.9598,
+ 'train_acc_clean_only': 0.9647326274397362,
+ 'train_asr_bd_only': 0.5268542199488491,
+ 'train_cross_acc_only': 0.8682864450127877,
+ 'train_epoch_loss_avg_over_batch': 0.1204506568848858,
+ 'train_ra_bd_only': 0.5345268542199488}
+2026-10-07:13:58:55 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:58:55 [INFO    ] [wanet.py:399] Epoch 60:
+2026-10-07:13:58:55 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:59:04 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:59:04 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:59:06 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.1987, eval sets rebuilt with current trigger
+2026-10-07:13:59:10 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.2644686707308594,
+ 'clean_test_loss_avg_over_batch': 0.3243028028762039,
+ 'cross_test_loss_avg_over_batch': 0.5877627164502687,
+ 'epoch': 59,
+ 'ra_test_loss_avg_over_batch': 3.190045759711467,
+ 'test_acc': 0.9135,
+ 'test_asr': 0.6406666666666667,
+ 'test_cross_acc': 0.8353,
+ 'test_ra': 0.3241111111111111,
+ 'train_acc': 0.96232,
+ 'train_acc_clean_only': 0.9671902840641449,
+ 'train_asr_bd_only': 0.5601023017902813,
+ 'train_cross_acc_only': 0.8593350383631714,
+ 'train_epoch_loss_avg_over_batch': 0.10982618279412122,
+ 'train_ra_bd_only': 0.5089514066496164}
+2026-10-07:13:59:11 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:59:11 [INFO    ] [wanet.py:399] Epoch 61:
+2026-10-07:13:59:11 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:59:20 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:59:20 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:59:22 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.2026, eval sets rebuilt with current trigger
+2026-10-07:13:59:25 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.0438784537181047,
+ 'clean_test_loss_avg_over_batch': 0.33562126189847535,
+ 'cross_test_loss_avg_over_batch': 0.6850803962236718,
+ 'epoch': 60,
+ 'ra_test_loss_avg_over_batch': 2.880141056759257,
+ 'test_acc': 0.9047,
+ 'test_asr': 0.651,
+ 'test_cross_acc': 0.8099,
+ 'test_ra': 0.30577777777777776,
+ 'train_acc': 0.9601,
+ 'train_acc_clean_only': 0.9651627173490077,
+ 'train_asr_bd_only': 0.5089514066496164,
+ 'train_cross_acc_only': 0.8695652173913043,
+ 'train_epoch_loss_avg_over_batch': 0.11773815294227484,
+ 'train_ra_bd_only': 0.5549872122762148}
+2026-10-07:13:59:25 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:59:25 [INFO    ] [wanet.py:399] Epoch 62:
+2026-10-07:13:59:25 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:59:35 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:59:35 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:59:36 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.2065, eval sets rebuilt with current trigger
+2026-10-07:13:59:39 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.838029833746628,
+ 'clean_test_loss_avg_over_batch': 0.3583729312389712,
+ 'cross_test_loss_avg_over_batch': 0.7141266525546207,
+ 'epoch': 61,
+ 'ra_test_loss_avg_over_batch': 4.392290528391449,
+ 'test_acc': 0.9025,
+ 'test_asr': 0.751,
+ 'test_cross_acc': 0.8097,
+ 'test_ra': 0.22933333333333333,
+ 'train_acc': 0.96132,
+ 'train_acc_clean_only': 0.9663301042456018,
+ 'train_asr_bd_only': 0.5447570332480819,
+ 'train_cross_acc_only': 0.8567774936061381,
+ 'train_epoch_loss_avg_over_batch': 0.11614144235239614,
+ 'train_ra_bd_only': 0.4961636828644501}
+2026-10-07:13:59:40 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:59:40 [INFO    ] [wanet.py:399] Epoch 63:
+2026-10-07:13:59:40 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:13:59:49 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:59:49 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:59:51 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.2103, eval sets rebuilt with current trigger
+2026-10-07:13:59:54 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.9972406449452252,
+ 'clean_test_loss_avg_over_batch': 0.3686745962764643,
+ 'cross_test_loss_avg_over_batch': 0.5873773988289169,
+ 'epoch': 62,
+ 'ra_test_loss_avg_over_batch': 3.198084230154333,
+ 'test_acc': 0.897,
+ 'test_asr': 0.6863333333333334,
+ 'test_cross_acc': 0.8333,
+ 'test_ra': 0.2727777777777778,
+ 'train_acc': 0.95968,
+ 'train_acc_clean_only': 0.964363978946075,
+ 'train_asr_bd_only': 0.5601023017902813,
+ 'train_cross_acc_only': 0.8670076726342711,
+ 'train_epoch_loss_avg_over_batch': 0.11906826328914946,
+ 'train_ra_bd_only': 0.5140664961636828}
+2026-10-07:13:59:55 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:59:55 [INFO    ] [wanet.py:399] Epoch 64:
+2026-10-07:13:59:55 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:00:03 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:00:03 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:00:05 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.2140, eval sets rebuilt with current trigger
+2026-10-07:14:00:08 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.7606722578196459,
+ 'clean_test_loss_avg_over_batch': 0.3770765467912336,
+ 'cross_test_loss_avg_over_batch': 0.6884296076207221,
+ 'epoch': 63,
+ 'ra_test_loss_avg_over_batch': 4.366758091348998,
+ 'test_acc': 0.8989,
+ 'test_asr': 0.765,
+ 'test_cross_acc': 0.8211,
+ 'test_ra': 0.21233333333333335,
+ 'train_acc': 0.96236,
+ 'train_acc_clean_only': 0.9669854793454441,
+ 'train_asr_bd_only': 0.5601023017902813,
+ 'train_cross_acc_only': 0.8746803069053708,
+ 'train_epoch_loss_avg_over_batch': 0.11161643065645567,
+ 'train_ra_bd_only': 0.5166240409207161}
+2026-10-07:14:00:09 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:00:09 [INFO    ] [wanet.py:399] Epoch 65:
+2026-10-07:14:00:09 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:00:17 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:00:17 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:00:19 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.2181, eval sets rebuilt with current trigger
+2026-10-07:14:00:22 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.4251203415259509,
+ 'clean_test_loss_avg_over_batch': 0.3614474315243431,
+ 'cross_test_loss_avg_over_batch': 0.6857345360743848,
+ 'epoch': 64,
+ 'ra_test_loss_avg_over_batch': 6.228287609530167,
+ 'test_acc': 0.8986,
+ 'test_asr': 0.8743333333333333,
+ 'test_cross_acc': 0.8182,
+ 'test_ra': 0.11788888888888889,
+ 'train_acc': 0.95942,
+ 'train_acc_clean_only': 0.9642001351711144,
+ 'train_asr_bd_only': 0.5473145780051151,
+ 'train_cross_acc_only': 0.8670076726342711,
+ 'train_epoch_loss_avg_over_batch': 0.11807508879076795,
+ 'train_ra_bd_only': 0.5063938618925832}
+2026-10-07:14:00:23 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:00:23 [INFO    ] [wanet.py:399] Epoch 66:
+2026-10-07:14:00:23 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:00:32 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:00:32 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:00:34 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.2220, eval sets rebuilt with current trigger
+2026-10-07:14:00:37 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.394431686317417,
+ 'clean_test_loss_avg_over_batch': 0.3549260447344071,
+ 'cross_test_loss_avg_over_batch': 0.5785097749550131,
+ 'epoch': 65,
+ 'ra_test_loss_avg_over_batch': 6.912438654563796,
+ 'test_acc': 0.8972,
+ 'test_asr': 0.8747777777777778,
+ 'test_cross_acc': 0.8349,
+ 'test_ra': 0.115,
+ 'train_acc': 0.96416,
+ 'train_acc_clean_only': 0.9683371904888689,
+ 'train_asr_bd_only': 0.6138107416879796,
+ 'train_cross_acc_only': 0.8785166240409207,
+ 'train_epoch_loss_avg_over_batch': 0.10722940591404505,
+ 'train_ra_bd_only': 0.45268542199488493}
+2026-10-07:14:00:38 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:00:38 [INFO    ] [wanet.py:399] Epoch 67:
+2026-10-07:14:00:38 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:00:47 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:00:47 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:00:49 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.2261, eval sets rebuilt with current trigger
+2026-10-07:14:00:52 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.426580527298887,
+ 'clean_test_loss_avg_over_batch': 0.3168079733017455,
+ 'cross_test_loss_avg_over_batch': 0.5855147810299185,
+ 'epoch': 66,
+ 'ra_test_loss_avg_over_batch': 2.6650947617812895,
+ 'test_acc': 0.9128,
+ 'test_asr': 0.5736666666666667,
+ 'test_cross_acc': 0.8349,
+ 'test_ra': 0.3804444444444444,
+ 'train_acc': 0.96116,
+ 'train_acc_clean_only': 0.9653060806520982,
+ 'train_asr_bd_only': 0.6214833759590793,
+ 'train_cross_acc_only': 0.8721227621483376,
+ 'train_epoch_loss_avg_over_batch': 0.11293389067015684,
+ 'train_ra_bd_only': 0.44501278772378516}
+2026-10-07:14:00:53 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:00:53 [INFO    ] [wanet.py:399] Epoch 68:
+2026-10-07:14:00:53 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:01:02 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:01:02 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:01:04 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.2293, eval sets rebuilt with current trigger
+2026-10-07:14:01:07 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.6922223467222401,
+ 'clean_test_loss_avg_over_batch': 0.3061263027565577,
+ 'cross_test_loss_avg_over_batch': 0.6089282986483996,
+ 'epoch': 67,
+ 'ra_test_loss_avg_over_batch': 2.9624236200896785,
+ 'test_acc': 0.9182,
+ 'test_asr': 0.5735555555555556,
+ 'test_cross_acc': 0.8395,
+ 'test_ra': 0.3887777777777778,
+ 'train_acc': 0.9639,
+ 'train_acc_clean_only': 0.9678456591639871,
+ 'train_asr_bd_only': 0.6214833759590793,
+ 'train_cross_acc_only': 0.8887468030690537,
+ 'train_epoch_loss_avg_over_batch': 0.10757142970876774,
+ 'train_ra_bd_only': 0.4680306905370844}
+2026-10-07:14:01:08 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:01:08 [INFO    ] [wanet.py:399] Epoch 69:
+2026-10-07:14:01:08 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:01:16 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:01:16 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:01:18 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.2328, eval sets rebuilt with current trigger
+2026-10-07:14:01:21 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.6498765005192286,
+ 'clean_test_loss_avg_over_batch': 0.3176839851503131,
+ 'cross_test_loss_avg_over_batch': 0.6324214580692823,
+ 'epoch': 68,
+ 'ra_test_loss_avg_over_batch': 5.110560840284321,
+ 'test_acc': 0.9076,
+ 'test_asr': 0.8007777777777778,
+ 'test_cross_acc': 0.8202,
+ 'test_ra': 0.178,
+ 'train_acc': 0.96134,
+ 'train_acc_clean_only': 0.9658590533925902,
+ 'train_asr_bd_only': 0.5856777493606138,
+ 'train_cross_acc_only': 0.8670076726342711,
+ 'train_epoch_loss_avg_over_batch': 0.11530906601768473,
+ 'train_ra_bd_only': 0.5063938618925832}
+2026-10-07:14:01:22 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:01:22 [INFO    ] [wanet.py:399] Epoch 70:
+2026-10-07:14:01:22 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:01:30 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:01:30 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:01:32 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.2361, eval sets rebuilt with current trigger
+2026-10-07:14:01:35 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.5905456253340546,
+ 'clean_test_loss_avg_over_batch': 0.35721657302560683,
+ 'cross_test_loss_avg_over_batch': 0.679889429596406,
+ 'epoch': 69,
+ 'ra_test_loss_avg_over_batch': 5.6637500776371486,
+ 'test_acc': 0.9022,
+ 'test_asr': 0.8137777777777778,
+ 'test_cross_acc': 0.8157,
+ 'test_ra': 0.1681111111111111,
+ 'train_acc': 0.9648,
+ 'train_acc_clean_only': 0.9685215147356995,
+ 'train_asr_bd_only': 0.6624040920716112,
+ 'train_cross_acc_only': 0.8836317135549873,
+ 'train_epoch_loss_avg_over_batch': 0.1076395042917079,
+ 'train_ra_bd_only': 0.4143222506393862}
+2026-10-07:14:01:36 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:01:36 [INFO    ] [wanet.py:399] Epoch 71:
+2026-10-07:14:01:36 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:01:44 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:01:44 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:01:46 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.2398, eval sets rebuilt with current trigger
+2026-10-07:14:01:49 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.2674763588838174,
+ 'clean_test_loss_avg_over_batch': 0.3075423571693746,
+ 'cross_test_loss_avg_over_batch': 0.5898258914298649,
+ 'epoch': 70,
+ 'ra_test_loss_avg_over_batch': 3.6562668504849287,
+ 'test_acc': 0.9134,
+ 'test_asr': 0.6354444444444445,
+ 'test_cross_acc': 0.8336,
+ 'test_ra': 0.31666666666666665,
+ 'train_acc': 0.9641,
+ 'train_acc_clean_only': 0.967804698220247,
+ 'train_asr_bd_only': 0.670076726342711,
+ 'train_cross_acc_only': 0.8797953964194374,
+ 'train_epoch_loss_avg_over_batch': 0.10695206005688367,
+ 'train_ra_bd_only': 0.40153452685422}
+2026-10-07:14:01:50 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:01:50 [INFO    ] [wanet.py:399] Epoch 72:
+2026-10-07:14:01:50 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:01:59 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:01:59 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:02:01 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.2430, eval sets rebuilt with current trigger
+2026-10-07:14:02:04 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.8142944641516242,
+ 'clean_test_loss_avg_over_batch': 0.28135971642464774,
+ 'cross_test_loss_avg_over_batch': 0.5545606575434721,
+ 'epoch': 71,
+ 'ra_test_loss_avg_over_batch': 4.029246323545214,
+ 'test_acc': 0.917,
+ 'test_asr': 0.7238888888888889,
+ 'test_cross_acc': 0.8379,
+ 'test_ra': 0.23177777777777778,
+ 'train_acc': 0.96482,
+ 'train_acc_clean_only': 0.9690335265324513,
+ 'train_asr_bd_only': 0.629156010230179,
+ 'train_cross_acc_only': 0.8695652173913043,
+ 'train_epoch_loss_avg_over_batch': 0.10489917812092453,
+ 'train_ra_bd_only': 0.45524296675191817}
+2026-10-07:14:02:04 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:02:04 [INFO    ] [wanet.py:399] Epoch 73:
+2026-10-07:14:02:04 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:02:12 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:02:12 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:02:14 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.2467, eval sets rebuilt with current trigger
+2026-10-07:14:02:17 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.3476066681700693,
+ 'clean_test_loss_avg_over_batch': 0.3047287057660803,
+ 'cross_test_loss_avg_over_batch': 0.5534000025142597,
+ 'epoch': 72,
+ 'ra_test_loss_avg_over_batch': 6.40109268376525,
+ 'test_acc': 0.9139,
+ 'test_asr': 0.8817777777777778,
+ 'test_cross_acc': 0.8419,
+ 'test_ra': 0.10544444444444444,
+ 'train_acc': 0.96578,
+ 'train_acc_clean_only': 0.969525057857333,
+ 'train_asr_bd_only': 0.649616368286445,
+ 'train_cross_acc_only': 0.8900255754475703,
+ 'train_epoch_loss_avg_over_batch': 0.10209940202877192,
+ 'train_ra_bd_only': 0.4092071611253197}
+2026-10-07:14:02:18 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:02:18 [INFO    ] [wanet.py:399] Epoch 74:
+2026-10-07:14:02:18 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:02:27 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:02:27 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:02:29 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.2499, eval sets rebuilt with current trigger
+2026-10-07:14:02:32 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.436607533777264,
+ 'clean_test_loss_avg_over_batch': 0.3091192752877368,
+ 'cross_test_loss_avg_over_batch': 0.5674454709397087,
+ 'epoch': 73,
+ 'ra_test_loss_avg_over_batch': 2.914286364971752,
+ 'test_acc': 0.915,
+ 'test_asr': 0.5977777777777777,
+ 'test_cross_acc': 0.8425,
+ 'test_ra': 0.35755555555555557,
+ 'train_acc': 0.96374,
+ 'train_acc_clean_only': 0.967784217748377,
+ 'train_asr_bd_only': 0.6572890025575447,
+ 'train_cross_acc_only': 0.8644501278772379,
+ 'train_epoch_loss_avg_over_batch': 0.10683346053590174,
+ 'train_ra_bd_only': 0.40664961636828645}
+2026-10-07:14:02:33 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:02:33 [INFO    ] [wanet.py:399] Epoch 75:
+2026-10-07:14:02:33 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:02:42 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:02:42 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:02:44 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.2535, eval sets rebuilt with current trigger
+2026-10-07:14:02:47 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.31920952077063036,
+ 'clean_test_loss_avg_over_batch': 0.3764311307215992,
+ 'cross_test_loss_avg_over_batch': 0.6147930109048192,
+ 'epoch': 74,
+ 'ra_test_loss_avg_over_batch': 9.001037987185196,
+ 'test_acc': 0.8953,
+ 'test_asr': 0.9024444444444445,
+ 'test_cross_acc': 0.8281,
+ 'test_ra': 0.08855555555555555,
+ 'train_acc': 0.96404,
+ 'train_acc_clean_only': 0.9679890224670776,
+ 'train_asr_bd_only': 0.6419437340153452,
+ 'train_cross_acc_only': 0.8785166240409207,
+ 'train_epoch_loss_avg_over_batch': 0.1051695866038656,
+ 'train_ra_bd_only': 0.4194373401534527}
+2026-10-07:14:02:47 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:02:47 [INFO    ] [wanet.py:399] Epoch 76:
+2026-10-07:14:02:47 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:02:56 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:02:56 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:02:58 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.2571, eval sets rebuilt with current trigger
+2026-10-07:14:03:01 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.2872427013558401,
+ 'clean_test_loss_avg_over_batch': 0.36120607072039496,
+ 'cross_test_loss_avg_over_batch': 0.5876961825769159,
+ 'epoch': 75,
+ 'ra_test_loss_avg_over_batch': 8.818962923237976,
+ 'test_acc': 0.904,
+ 'test_asr': 0.907,
+ 'test_cross_acc': 0.8433,
+ 'test_ra': 0.08422222222222223,
+ 'train_acc': 0.96674,
+ 'train_acc_clean_only': 0.9701599524853053,
+ 'train_asr_bd_only': 0.7263427109974424,
+ 'train_cross_acc_only': 0.8734015345268542,
+ 'train_epoch_loss_avg_over_batch': 0.09776308218879468,
+ 'train_ra_bd_only': 0.32225063938618925}
+2026-10-07:14:03:02 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:03:02 [INFO    ] [wanet.py:399] Epoch 77:
+2026-10-07:14:03:02 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:03:11 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:03:11 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:03:13 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.2598, eval sets rebuilt with current trigger
+2026-10-07:14:03:16 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.7211722337024312,
+ 'clean_test_loss_avg_over_batch': 0.3022751278668359,
+ 'cross_test_loss_avg_over_batch': 0.5541545641195925,
+ 'epoch': 76,
+ 'ra_test_loss_avg_over_batch': 5.8020285821296795,
+ 'test_acc': 0.9141,
+ 'test_asr': 0.792,
+ 'test_cross_acc': 0.8468,
+ 'test_ra': 0.19277777777777777,
+ 'train_acc': 0.966,
+ 'train_acc_clean_only': 0.9693221380298996,
+ 'train_asr_bd_only': 0.7307692307692307,
+ 'train_cross_acc_only': 0.8756410256410256,
+ 'train_epoch_loss_avg_over_batch': 0.10255350877323648,
+ 'train_ra_bd_only': 0.382051282051282}
+2026-10-07:14:03:17 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:03:17 [INFO    ] [wanet.py:399] Epoch 78:
+2026-10-07:14:03:17 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:03:25 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:03:25 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:03:27 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.2633, eval sets rebuilt with current trigger
+2026-10-07:14:03:30 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.49676789951996064,
+ 'clean_test_loss_avg_over_batch': 0.2856625646730013,
+ 'cross_test_loss_avg_over_batch': 0.5618701584731476,
+ 'epoch': 77,
+ 'ra_test_loss_avg_over_batch': 7.663982089136688,
+ 'test_acc': 0.9168,
+ 'test_asr': 0.8533333333333334,
+ 'test_cross_acc': 0.839,
+ 'test_ra': 0.13422222222222221,
+ 'train_acc': 0.96614,
+ 'train_acc_clean_only': 0.9697503430479039,
+ 'train_asr_bd_only': 0.710997442455243,
+ 'train_cross_acc_only': 0.8682864450127877,
+ 'train_epoch_loss_avg_over_batch': 0.1016118172175058,
+ 'train_ra_bd_only': 0.36061381074168797}
+2026-10-07:14:03:31 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:03:31 [INFO    ] [wanet.py:399] Epoch 79:
+2026-10-07:14:03:31 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:03:40 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:03:40 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:03:42 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.2663, eval sets rebuilt with current trigger
+2026-10-07:14:03:45 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.5244405911841863,
+ 'clean_test_loss_avg_over_batch': 0.3425007815225215,
+ 'cross_test_loss_avg_over_batch': 0.6607401363457306,
+ 'epoch': 78,
+ 'ra_test_loss_avg_over_batch': 8.071545419558673,
+ 'test_acc': 0.9047,
+ 'test_asr': 0.8518888888888889,
+ 'test_cross_acc': 0.8175,
+ 'test_ra': 0.13177777777777777,
+ 'train_acc': 0.96688,
+ 'train_acc_clean_only': 0.9703460987098096,
+ 'train_asr_bd_only': 0.7333333333333333,
+ 'train_cross_acc_only': 0.8666666666666667,
+ 'train_epoch_loss_avg_over_batch': 0.09954623378756101,
+ 'train_ra_bd_only': 0.33589743589743587}
+2026-10-07:14:03:45 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:03:45 [INFO    ] [wanet.py:399] Epoch 80:
+2026-10-07:14:03:45 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:03:54 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:03:54 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:03:56 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.2694, eval sets rebuilt with current trigger
+2026-10-07:14:03:59 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.1154166505160466,
+ 'clean_test_loss_avg_over_batch': 0.430159827010541,
+ 'cross_test_loss_avg_over_batch': 0.6382040564395204,
+ 'epoch': 79,
+ 'ra_test_loss_avg_over_batch': 11.19500333490506,
+ 'test_acc': 0.8797,
+ 'test_asr': 0.963,
+ 'test_cross_acc': 0.8265,
+ 'test_ra': 0.03166666666666667,
+ 'train_acc': 0.96626,
+ 'train_acc_clean_only': 0.9697503430479039,
+ 'train_asr_bd_only': 0.7340153452685422,
+ 'train_cross_acc_only': 0.8644501278772379,
+ 'train_epoch_loss_avg_over_batch': 0.1006912609509876,
+ 'train_ra_bd_only': 0.3631713554987212}
+2026-10-07:14:04:00 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:04:00 [INFO    ] [wanet.py:399] Epoch 81:
+2026-10-07:14:04:00 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:04:09 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:04:09 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:04:11 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.2724, eval sets rebuilt with current trigger
+2026-10-07:14:04:14 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.664002388295993,
+ 'clean_test_loss_avg_over_batch': 0.31345221050130795,
+ 'cross_test_loss_avg_over_batch': 0.603402732293817,
+ 'epoch': 80,
+ 'ra_test_loss_avg_over_batch': 6.75164838575981,
+ 'test_acc': 0.9112,
+ 'test_asr': 0.8113333333333334,
+ 'test_cross_acc': 0.8316,
+ 'test_ra': 0.17077777777777778,
+ 'train_acc': 0.96646,
+ 'train_acc_clean_only': 0.9699346672947344,
+ 'train_asr_bd_only': 0.731457800511509,
+ 'train_cross_acc_only': 0.8670076726342711,
+ 'train_epoch_loss_avg_over_batch': 0.09863551162526278,
+ 'train_ra_bd_only': 0.2966751918158568}
+2026-10-07:14:04:15 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:04:15 [INFO    ] [wanet.py:399] Epoch 82:
+2026-10-07:14:04:15 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:04:24 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:04:24 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:04:26 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.2755, eval sets rebuilt with current trigger
+2026-10-07:14:04:29 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.2701796889305115,
+ 'clean_test_loss_avg_over_batch': 0.32287232445765146,
+ 'cross_test_loss_avg_over_batch': 0.6069626393197458,
+ 'epoch': 81,
+ 'ra_test_loss_avg_over_batch': 12.485448367159131,
+ 'test_acc': 0.9084,
+ 'test_asr': 0.9183333333333333,
+ 'test_cross_acc': 0.8328,
+ 'test_ra': 0.07455555555555556,
+ 'train_acc': 0.96516,
+ 'train_acc_clean_only': 0.9686053655539627,
+ 'train_asr_bd_only': 0.7410256410256411,
+ 'train_cross_acc_only': 0.8615384615384616,
+ 'train_epoch_loss_avg_over_batch': 0.10258935862804389,
+ 'train_ra_bd_only': 0.3282051282051282}
+2026-10-07:14:04:30 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:04:30 [INFO    ] [wanet.py:399] Epoch 83:
+2026-10-07:14:04:30 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:04:38 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:04:38 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:04:40 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.2783, eval sets rebuilt with current trigger
+2026-10-07:14:04:43 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.06285245092192167,
+ 'clean_test_loss_avg_over_batch': 0.5104605674366408,
+ 'cross_test_loss_avg_over_batch': 0.6790668119358111,
+ 'epoch': 82,
+ 'ra_test_loss_avg_over_batch': 15.276236225181902,
+ 'test_acc': 0.8601,
+ 'test_asr': 0.9773333333333334,
+ 'test_cross_acc': 0.8096,
+ 'test_ra': 0.020444444444444446,
+ 'train_acc': 0.96536,
+ 'train_acc_clean_only': 0.9683391357771861,
+ 'train_asr_bd_only': 0.764102564102564,
+ 'train_cross_acc_only': 0.8794871794871795,
+ 'train_epoch_loss_avg_over_batch': 0.10351027518063022,
+ 'train_ra_bd_only': 0.31794871794871793}
+2026-10-07:14:04:44 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:04:44 [INFO    ] [wanet.py:399] Epoch 84:
+2026-10-07:14:04:44 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:04:53 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:04:53 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:04:55 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.2810, eval sets rebuilt with current trigger
+2026-10-07:14:04:58 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.9425982673403243,
+ 'clean_test_loss_avg_over_batch': 0.2955381684476816,
+ 'cross_test_loss_avg_over_batch': 0.579847264704825,
+ 'epoch': 83,
+ 'ra_test_loss_avg_over_batch': 5.348055362701416,
+ 'test_acc': 0.9171,
+ 'test_asr': 0.7385555555555555,
+ 'test_cross_acc': 0.8335,
+ 'test_ra': 0.23244444444444445,
+ 'train_acc': 0.96808,
+ 'train_acc_clean_only': 0.9716140659880803,
+ 'train_asr_bd_only': 0.7544757033248082,
+ 'train_cross_acc_only': 0.8542199488491049,
+ 'train_epoch_loss_avg_over_batch': 0.09437265577714157,
+ 'train_ra_bd_only': 0.3171355498721228}
+2026-10-07:14:04:58 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:04:58 [INFO    ] [wanet.py:399] Epoch 85:
+2026-10-07:14:04:58 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:05:06 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:05:06 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:05:08 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.2839, eval sets rebuilt with current trigger
+2026-10-07:14:05:11 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.5672785952477388,
+ 'clean_test_loss_avg_over_batch': 0.29356422756291645,
+ 'cross_test_loss_avg_over_batch': 0.5717286041265801,
+ 'epoch': 84,
+ 'ra_test_loss_avg_over_batch': 6.9025184335842935,
+ 'test_acc': 0.9141,
+ 'test_asr': 0.8378888888888889,
+ 'test_cross_acc': 0.8416,
+ 'test_ra': 0.14255555555555555,
+ 'train_acc': 0.96594,
+ 'train_acc_clean_only': 0.9690949679480615,
+ 'train_asr_bd_only': 0.7621483375959079,
+ 'train_cross_acc_only': 0.870843989769821,
+ 'train_epoch_loss_avg_over_batch': 0.10151504286948372,
+ 'train_ra_bd_only': 0.319693094629156}
+2026-10-07:14:05:12 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:05:12 [INFO    ] [wanet.py:399] Epoch 86:
+2026-10-07:14:05:12 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:05:20 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:05:20 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:05:22 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.2867, eval sets rebuilt with current trigger
+2026-10-07:14:05:25 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.49765533964398884,
+ 'clean_test_loss_avg_over_batch': 0.3140578032294406,
+ 'cross_test_loss_avg_over_batch': 0.5924337919848629,
+ 'epoch': 85,
+ 'ra_test_loss_avg_over_batch': 8.80745462632515,
+ 'test_acc': 0.9094,
+ 'test_asr': 0.8571111111111112,
+ 'test_cross_acc': 0.8296,
+ 'test_ra': 0.1298888888888889,
+ 'train_acc': 0.96614,
+ 'train_acc_clean_only': 0.9694226554979827,
+ 'train_asr_bd_only': 0.7749360613810742,
+ 'train_cross_acc_only': 0.8567774936061381,
+ 'train_epoch_loss_avg_over_batch': 0.09968689349396608,
+ 'train_ra_bd_only': 0.28388746803069054}
+2026-10-07:14:05:26 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:05:26 [INFO    ] [wanet.py:399] Epoch 87:
+2026-10-07:14:05:26 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:05:35 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:05:35 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:05:37 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.2891, eval sets rebuilt with current trigger
+2026-10-07:14:05:40 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.171017095708931,
+ 'clean_test_loss_avg_over_batch': 0.3660604426566559,
+ 'cross_test_loss_avg_over_batch': 0.6076359816744358,
+ 'epoch': 86,
+ 'ra_test_loss_avg_over_batch': 13.175832990189674,
+ 'test_acc': 0.8974,
+ 'test_asr': 0.949,
+ 'test_cross_acc': 0.8247,
+ 'test_ra': 0.04544444444444445,
+ 'train_acc': 0.96722,
+ 'train_acc_clean_only': 0.9705900423945768,
+ 'train_asr_bd_only': 0.7672634271099744,
+ 'train_cross_acc_only': 0.8567774936061381,
+ 'train_epoch_loss_avg_over_batch': 0.0976142251478208,
+ 'train_ra_bd_only': 0.2710997442455243}
+2026-10-07:14:05:41 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:05:41 [INFO    ] [wanet.py:399] Epoch 88:
+2026-10-07:14:05:41 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:05:50 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:05:50 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:05:52 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.2917, eval sets rebuilt with current trigger
+2026-10-07:14:05:55 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.6979173459637333,
+ 'clean_test_loss_avg_over_batch': 0.286202534373048,
+ 'cross_test_loss_avg_over_batch': 0.5550833829218829,
+ 'epoch': 87,
+ 'ra_test_loss_avg_over_batch': 6.855363140643482,
+ 'test_acc': 0.9217,
+ 'test_asr': 0.8037777777777778,
+ 'test_cross_acc': 0.8445,
+ 'test_ra': 0.174,
+ 'train_acc': 0.96858,
+ 'train_acc_clean_only': 0.9716345464599504,
+ 'train_asr_bd_only': 0.782608695652174,
+ 'train_cross_acc_only': 0.870843989769821,
+ 'train_epoch_loss_avg_over_batch': 0.09485293351961753,
+ 'train_ra_bd_only': 0.29923273657289}
+2026-10-07:14:05:55 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:05:55 [INFO    ] [wanet.py:399] Epoch 89:
+2026-10-07:14:05:55 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:06:04 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:06:04 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:06:06 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.2944, eval sets rebuilt with current trigger
+2026-10-07:14:06:10 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.2514281996958692,
+ 'clean_test_loss_avg_over_batch': 0.3224077219072777,
+ 'cross_test_loss_avg_over_batch': 0.5981147530712659,
+ 'epoch': 88,
+ 'ra_test_loss_avg_over_batch': 13.32884565541442,
+ 'test_acc': 0.9132,
+ 'test_asr': 0.9277777777777778,
+ 'test_cross_acc': 0.8352,
+ 'test_ra': 0.06466666666666666,
+ 'train_acc': 0.96932,
+ 'train_acc_clean_only': 0.9722694410879227,
+ 'train_asr_bd_only': 0.8005115089514067,
+ 'train_cross_acc_only': 0.8695652173913043,
+ 'train_epoch_loss_avg_over_batch': 0.09088199875672417,
+ 'train_ra_bd_only': 0.2813299232736573}
+2026-10-07:14:06:10 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:06:10 [INFO    ] [wanet.py:399] Epoch 90:
+2026-10-07:14:06:10 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:06:19 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:06:19 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:06:20 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.2970, eval sets rebuilt with current trigger
+2026-10-07:14:06:23 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.6005455226125852,
+ 'clean_test_loss_avg_over_batch': 0.3064482718517509,
+ 'cross_test_loss_avg_over_batch': 0.5868483681844759,
+ 'epoch': 89,
+ 'ra_test_loss_avg_over_batch': 8.118441031012736,
+ 'test_acc': 0.9151,
+ 'test_asr': 0.8303333333333334,
+ 'test_cross_acc': 0.8334,
+ 'test_ra': 0.14766666666666667,
+ 'train_acc': 0.96504,
+ 'train_acc_clean_only': 0.9681733467139083,
+ 'train_asr_bd_only': 0.7698209718670077,
+ 'train_cross_acc_only': 0.8670076726342711,
+ 'train_epoch_loss_avg_over_batch': 0.10440484406736196,
+ 'train_ra_bd_only': 0.30179028132992325}
+2026-10-07:14:06:24 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:06:24 [INFO    ] [wanet.py:399] Epoch 91:
+2026-10-07:14:06:24 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:06:33 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:06:33 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:06:35 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.2995, eval sets rebuilt with current trigger
+2026-10-07:14:06:38 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.6486453216680339,
+ 'clean_test_loss_avg_over_batch': 0.28788433025909377,
+ 'cross_test_loss_avg_over_batch': 0.5467271235170243,
+ 'epoch': 90,
+ 'ra_test_loss_avg_over_batch': 7.584459533154125,
+ 'test_acc': 0.9196,
+ 'test_asr': 0.8165555555555556,
+ 'test_cross_acc': 0.8489,
+ 'test_ra': 0.16266666666666665,
+ 'train_acc': 0.97054,
+ 'train_acc_clean_only': 0.973602293671923,
+ 'train_asr_bd_only': 0.782051282051282,
+ 'train_cross_acc_only': 0.8730769230769231,
+ 'train_epoch_loss_avg_over_batch': 0.08875539275767554,
+ 'train_ra_bd_only': 0.3}
+2026-10-07:14:06:39 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:06:39 [INFO    ] [wanet.py:399] Epoch 92:
+2026-10-07:14:06:39 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:06:48 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:06:48 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:06:50 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.3018, eval sets rebuilt with current trigger
+2026-10-07:14:06:53 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.5514634809863399,
+ 'clean_test_loss_avg_over_batch': 0.3167866572171827,
+ 'cross_test_loss_avg_over_batch': 0.7155163808713986,
+ 'epoch': 91,
+ 'ra_test_loss_avg_over_batch': 8.021061541328967,
+ 'test_acc': 0.914,
+ 'test_asr': 0.8425555555555555,
+ 'test_cross_acc': 0.8042,
+ 'test_ra': 0.142,
+ 'train_acc': 0.96854,
+ 'train_acc_clean_only': 0.971533893098505,
+ 'train_asr_bd_only': 0.7666666666666667,
+ 'train_cross_acc_only': 0.882051282051282,
+ 'train_epoch_loss_avg_over_batch': 0.09283443737794142,
+ 'train_ra_bd_only': 0.3076923076923077}
+2026-10-07:14:06:54 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:06:54 [INFO    ] [wanet.py:399] Epoch 93:
+2026-10-07:14:06:54 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:07:03 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:07:03 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:07:05 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.3039, eval sets rebuilt with current trigger
+2026-10-07:14:07:08 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.29324910831703266,
+ 'clean_test_loss_avg_over_batch': 0.3243666295009323,
+ 'cross_test_loss_avg_over_batch': 0.59863881182067,
+ 'epoch': 92,
+ 'ra_test_loss_avg_over_batch': 11.789083776339679,
+ 'test_acc': 0.9092,
+ 'test_asr': 0.914,
+ 'test_cross_acc': 0.8296,
+ 'test_ra': 0.07155555555555555,
+ 'train_acc': 0.96818,
+ 'train_acc_clean_only': 0.9710628711857464,
+ 'train_asr_bd_only': 0.7948717948717948,
+ 'train_cross_acc_only': 0.8743589743589744,
+ 'train_epoch_loss_avg_over_batch': 0.09450702017644787,
+ 'train_ra_bd_only': 0.27692307692307694}
+2026-10-07:14:07:08 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:07:08 [INFO    ] [wanet.py:399] Epoch 94:
+2026-10-07:14:07:08 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:07:17 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:07:17 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:07:19 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.3061, eval sets rebuilt with current trigger
+2026-10-07:14:07:22 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.2582073928394788,
+ 'clean_test_loss_avg_over_batch': 0.3580665039488032,
+ 'cross_test_loss_avg_over_batch': 0.6019878179966649,
+ 'epoch': 93,
+ 'ra_test_loss_avg_over_batch': 11.283792764368192,
+ 'test_acc': 0.9011,
+ 'test_asr': 0.9224444444444444,
+ 'test_cross_acc': 0.8309,
+ 'test_ra': 0.06655555555555556,
+ 'train_acc': 0.96742,
+ 'train_acc_clean_only': 0.9701804329571754,
+ 'train_asr_bd_only': 0.7979539641943734,
+ 'train_cross_acc_only': 0.8797953964194374,
+ 'train_epoch_loss_avg_over_batch': 0.09659960849539322,
+ 'train_ra_bd_only': 0.27877237851662406}
+2026-10-07:14:07:23 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:07:23 [INFO    ] [wanet.py:399] Epoch 95:
+2026-10-07:14:07:23 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:07:32 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:07:32 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:07:34 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.3086, eval sets rebuilt with current trigger
+2026-10-07:14:07:37 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.8844273887889486,
+ 'clean_test_loss_avg_over_batch': 0.2855660023721807,
+ 'cross_test_loss_avg_over_batch': 0.6030183404306823,
+ 'epoch': 94,
+ 'ra_test_loss_avg_over_batch': 6.2516519922605704,
+ 'test_acc': 0.919,
+ 'test_asr': 0.7631111111111111,
+ 'test_cross_acc': 0.8298,
+ 'test_ra': 0.2121111111111111,
+ 'train_acc': 0.96604,
+ 'train_acc_clean_only': 0.9692588117230221,
+ 'train_asr_bd_only': 0.7774936061381074,
+ 'train_cross_acc_only': 0.8593350383631714,
+ 'train_epoch_loss_avg_over_batch': 0.10017357660633752,
+ 'train_ra_bd_only': 0.29411764705882354}
+2026-10-07:14:07:37 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:07:37 [INFO    ] [wanet.py:399] Epoch 96:
+2026-10-07:14:07:37 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:07:46 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:07:46 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:07:48 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.3111, eval sets rebuilt with current trigger
+2026-10-07:14:07:51 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.22003667864581228,
+ 'clean_test_loss_avg_over_batch': 0.3751343492465683,
+ 'cross_test_loss_avg_over_batch': 0.6478459650202643,
+ 'epoch': 95,
+ 'ra_test_loss_avg_over_batch': 10.185698240575656,
+ 'test_acc': 0.8964,
+ 'test_asr': 0.9255555555555556,
+ 'test_cross_acc': 0.8107,
+ 'test_ra': 0.06322222222222222,
+ 'train_acc': 0.96726,
+ 'train_acc_clean_only': 0.9705081205070965,
+ 'train_asr_bd_only': 0.7672634271099744,
+ 'train_cross_acc_only': 0.8644501278772379,
+ 'train_epoch_loss_avg_over_batch': 0.0994665498471321,
+ 'train_ra_bd_only': 0.32225063938618925}
+2026-10-07:14:07:51 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:07:51 [INFO    ] [wanet.py:399] Epoch 97:
+2026-10-07:14:07:51 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:08:00 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:08:00 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:08:02 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.3135, eval sets rebuilt with current trigger
+2026-10-07:14:08:06 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.6581043034372195,
+ 'clean_test_loss_avg_over_batch': 0.30946504164345656,
+ 'cross_test_loss_avg_over_batch': 0.5458462921124471,
+ 'epoch': 96,
+ 'ra_test_loss_avg_over_batch': 9.239379358963228,
+ 'test_acc': 0.9138,
+ 'test_asr': 0.8276666666666667,
+ 'test_cross_acc': 0.8462,
+ 'test_ra': 0.1491111111111111,
+ 'train_acc': 0.9688,
+ 'train_acc_clean_only': 0.9716158099528978,
+ 'train_asr_bd_only': 0.8025641025641026,
+ 'train_cross_acc_only': 0.8756410256410256,
+ 'train_epoch_loss_avg_over_batch': 0.09358048073404357,
+ 'train_ra_bd_only': 0.23333333333333334}
+2026-10-07:14:08:06 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:08:06 [INFO    ] [wanet.py:399] Epoch 98:
+2026-10-07:14:08:06 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:08:15 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:08:15 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:08:17 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.3158, eval sets rebuilt with current trigger
+2026-10-07:14:08:20 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.2522017677694979,
+ 'clean_test_loss_avg_over_batch': 0.31015530973672867,
+ 'cross_test_loss_avg_over_batch': 0.5936944960038874,
+ 'epoch': 97,
+ 'ra_test_loss_avg_over_batch': 11.936497795749718,
+ 'test_acc': 0.9117,
+ 'test_asr': 0.9284444444444444,
+ 'test_cross_acc': 0.8321,
+ 'test_ra': 0.062,
+ 'train_acc': 0.9685,
+ 'train_acc_clean_only': 0.9712044565506789,
+ 'train_asr_bd_only': 0.7979539641943734,
+ 'train_cross_acc_only': 0.8849104859335039,
+ 'train_epoch_loss_avg_over_batch': 0.09328322590369245,
+ 'train_ra_bd_only': 0.2915601023017903}
+2026-10-07:14:08:21 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:08:21 [INFO    ] [wanet.py:399] Epoch 99:
+2026-10-07:14:08:21 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:08:30 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:08:30 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:08:32 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.3174, eval sets rebuilt with current trigger
+2026-10-07:14:08:35 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.37073650641340605,
+ 'clean_test_loss_avg_over_batch': 0.2948275642304481,
+ 'cross_test_loss_avg_over_batch': 0.5370888749632654,
+ 'epoch': 98,
+ 'ra_test_loss_avg_over_batch': 7.93755965165689,
+ 'test_acc': 0.9193,
+ 'test_asr': 0.8846666666666667,
+ 'test_cross_acc': 0.8457,
+ 'test_ra': 0.10266666666666667,
+ 'train_acc': 0.96948,
+ 'train_acc_clean_only': 0.9724537653347534,
+ 'train_asr_bd_only': 0.8184143222506394,
+ 'train_cross_acc_only': 0.8593350383631714,
+ 'train_epoch_loss_avg_over_batch': 0.08980523888974468,
+ 'train_ra_bd_only': 0.2659846547314578}
+2026-10-07:14:08:36 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:08:36 [INFO    ] [wanet.py:399] Epoch 100:
+2026-10-07:14:08:36 [INFO    ] [wanet.py:593]  Train:
+2026-10-07:14:08:45 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:08:45 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:08:47 [INFO    ] [wanet.py:419] GS-Trigger seed mean|abs|=1.3192, eval sets rebuilt with current trigger
+2026-10-07:14:08:50 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.39274950346476595,
+ 'clean_test_loss_avg_over_batch': 0.28549423889268805,
+ 'cross_test_loss_avg_over_batch': 0.5470373926660682,
+ 'epoch': 99,
+ 'ra_test_loss_avg_over_batch': 8.982983488432119,
+ 'test_acc': 0.9204,
+ 'test_asr': 0.884,
+ 'test_cross_acc': 0.8464,
+ 'test_ra': 0.10055555555555555,
+ 'train_acc': 0.97216,
+ 'train_acc_clean_only': 0.9746656562967211,
+ 'train_asr_bd_only': 0.8491048593350383,
+ 'train_cross_acc_only': 0.8772378516624041,
+ 'train_epoch_loss_avg_over_batch': 0.08312987449967191,
+ 'train_ra_bd_only': 0.24552429667519182}
+2026-10-07:14:08:50 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:14:08:50 [DEBUG   ] [trainer_cls.py:87] return df with np.nan and None converted by str()
+2026-10-07:14:08:50 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:14:08:52 [INFO    ] [save_load_attack.py:106] saving...
+2026-10-07:14:08:53 [INFO    ] [save_load_attack.py:114] Saved, folder path: ./record/20261007_134441_wanet_attack_wanet_BFVG

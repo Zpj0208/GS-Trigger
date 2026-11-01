@@ -1,0 +1,6 @@
+﻿指标,论文值,原始输出是否在本机,现存依据,说明
+Neural Cleanse 异常指数 (GS),1.65,是,其他实验数据/防御/d_nc.log:306 Anomaly index=1.6458238363265991,可直接引用
+Neural Cleanse 异常指数 (Fixed),0.9161,是（2026-10-30 已从服务器取回）,nc/trigger/cifar10_output_clean.txt: Test 0 第三个数值 = 0.9160893,论文表填 1.65 与之不符，应改为 0.9161（仍 <2，结论不变）
+STRIP TPR / FPR (GS),0.94 / 13.2 %,是（已取回 detection_info.csv，混淆计数完整）,仅 Figure_7.py / g_fig_strip.py / g_build_draft_v1.py 的硬编码常量,STRIP 0.94/13.2 有原始支撑（TN868/FP132/FN8915/TP85）
+SentiNet TPR / FPR (GS),1.9 / 2.0 %,是（已取回 detection_info.csv：TN980/FP20/FN8829/TP171）,SentiNet_AvpT detection_info.csv,TPR 1.90% / FPR 2.0%，与论文一致；阈值=平均置信度>0.9（源码固定）
+STRIP 预算扫描 TPR (N=100/500/1000/2000),2.13 / 1.16 / 0.94 / 1.20 %,是（2026-10-30 本地复算，混淆计数与服务器逐位一致）,服务器 detection_info.csv 无 N 列；本地按 N=100/500/1000/2000 重跑后确定映射,🔴 论文写的 100→1.2、500→2.1 是互换错误；正确为 100→2.13、500→1.16

@@ -1,0 +1,1965 @@
+2026-10-07:12:40:23 [INFO    ] [prototype.py:140] {'alpha': 0.5,
+ 'amp': False,
+ 'attack': 'lira',
+ 'attack_label_trans': 'all2one',
+ 'attack_model': 'autoencoder',
+ 'attack_target': 0,
+ 'avoid_clsmodel_reinitialization': True,
+ 'batch_size': 128,
+ 'bd_yaml_path': '/root/miniconda3/lib/python3.12/site-packages/backdoorbench/attack/../config/attack/lira/default.yaml',
+ 'best_threshold': 0.1,
+ 'both_train_epochs': 50,
+ 'client_optimizer': 'sgd',
+ 'dataset': 'cifar10',
+ 'dataset_path': '/root/autodl-tmp/data/cifar10',
+ 'device': 'cuda',
+ 'epochs': 100,
+ 'epochs_per_external_eval': 50,
+ 'eps': 0.01,
+ 'finetune_alpha': 0.5,
+ 'finetune_client_optimizer': 'sgd',
+ 'finetune_eps': 0.01,
+ 'finetune_lr': 0.01,
+ 'finetune_lr_scheduler': 'MultiStepLR',
+ 'finetune_sgd_momentum': 0.9,
+ 'finetune_steplr_gamma': 0.1,
+ 'finetune_steplr_milestones': [50, 100, 150, 200],
+ 'finetune_wd': 0.0005,
+ 'fix_generator_epoch': 1,
+ 'frequency_save': 0,
+ 'img_size': (32, 32, 3),
+ 'input_channel': 3,
+ 'input_height': 32,
+ 'input_width': 32,
+ 'lr': 0.01,
+ 'lr_atk': 0.0001,
+ 'lr_scheduler': 'CosineAnnealingLR',
+ 'model': 'preactresnet18',
+ 'non_blocking': True,
+ 'num_classes': 10,
+ 'num_workers': 8,
+ 'optimizer': 'sgd',
+ 'pin_memory': True,
+ 'prefetch': False,
+ 'random_crop': 5,
+ 'random_rotation': 10,
+ 'random_seed': 42,
+ 'save_path': './record/20261007_124023_lira_attack_lira_KPAn',
+ 'sgd_momentum': 0.9,
+ 'steplr_gamma': 0.1,
+ 'steplr_milestones': [50, 100, 150, 200],
+ 'terminal_info': ['/root/miniconda3/lib/python3.12/site-packages/backdoorbench/attack/lira.py',
+                   '--model',
+                   'preactresnet18',
+                   '--dataset',
+                   'cifar10',
+                   '--dataset_path',
+                   '/root/autodl-tmp/data',
+                   '--random_seed',
+                   '42',
+                   '--epochs',
+                   '100',
+                   '--num_workers',
+                   '8',
+                   '--device',
+                   'cuda'],
+ 'test_alpha': 0.5,
+ 'test_eps': 0.01,
+ 'test_n_size': 10,
+ 'test_use_train_best': False,
+ 'test_use_train_last': True,
+ 'train_epoch': 1,
+ 'verbose': 1,
+ 'wd': 0.0005,
+ 'yaml_path': '/root/miniconda3/lib/python3.12/site-packages/backdoorbench/attack/../config/attack/prototype/cifar10.yaml'}
+2026-10-07:12:40:23 [DEBUG   ] [prototype.py:142] Only INFO or above level log will show in cmd. DEBUG level log only will show in log file.
+2026-10-07:12:40:23 [DEBUG   ] [prototype.py:148] Getting git info fails.
+2026-10-07:12:40:23 [INFO    ] [lira.py:936] stage2 start
+2026-10-07:12:40:25 [DEBUG   ] [prototype.py:168] dataset_and_transform_generate done
+2026-10-07:12:40:25 [DEBUG   ] [bd_dataset_v2.py:68] Not DatasetFolder or ImageFolder, so iter through
+2026-10-07:12:40:27 [DEBUG   ] [bd_dataset_v2.py:68] Not DatasetFolder or ImageFolder, so iter through
+2026-10-07:12:40:27 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:40:27 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:40:27 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:40:27 [DEBUG   ] [lira.py:615] ========== ARGS ==========
+2026-10-07:12:40:27 [DEBUG   ] [lira.py:616] Namespace(num_workers=8, pin_memory=True, non_blocking=True, prefetch=False, amp=False, device='cuda', client_optimizer='sgd', dataset='cifar10', dataset_path='/root/autodl-tmp/data/cifar10', frequency_save=0, batch_size=128, lr=0.01, lr_scheduler='CosineAnnealingLR', model='preactresnet18', random_seed=42, sgd_momentum=0.9, wd=0.0005, epochs=100, random_rotation=10, random_crop=5, attack='lira', attack_model='autoencoder', lr_atk=0.0001, attack_label_trans='all2one', attack_target=0, eps=0.01, test_eps=0.01, alpha=0.5, test_alpha=0.5, optimizer='sgd', both_train_epochs=50, fix_generator_epoch=1, steplr_gamma=0.1, steplr_milestones=[50, 100, 150, 200], finetune_eps=0.01, finetune_alpha=0.5, finetune_client_optimizer='sgd', finetune_sgd_momentum=0.9, finetune_wd=0.0005, finetune_lr=0.01, finetune_lr_scheduler='MultiStepLR', finetune_steplr_gamma=0.1, finetune_steplr_milestones=[50, 100, 150, 200], yaml_path='/root/miniconda3/lib/python3.12/site-packages/backdoorbench/attack/../config/attack/prototype/cifar10.yaml', bd_yaml_path='/root/miniconda3/lib/python3.12/site-packages/backdoorbench/attack/../config/attack/lira/default.yaml', train_epoch=1, epochs_per_external_eval=50, best_threshold=0.1, verbose=1, avoid_clsmodel_reinitialization=True, test_n_size=10, test_use_train_best=False, test_use_train_last=True, terminal_info=['/root/miniconda3/lib/python3.12/site-packages/backdoorbench/attack/lira.py', '--model', 'preactresnet18', '--dataset', 'cifar10', '--dataset_path', '/root/autodl-tmp/data', '--random_seed', '42', '--epochs', '100', '--num_workers', '8', '--device', 'cuda'], num_classes=10, input_height=32, input_width=32, input_channel=3, img_size=(32, 32, 3), save_path='./record/20261007_124023_lira_attack_lira_KPAn')
+2026-10-07:12:40:29 [DEBUG   ] [lira.py:418] dataset_and_transform_generate done
+2026-10-07:12:40:30 [DEBUG   ] [lira.py:418] dataset_and_transform_generate done
+2026-10-07:12:40:30 [DEBUG   ] [lira.py:621] ========== DATA ==========
+2026-10-07:12:40:30 [DEBUG   ] [lira.py:622] Loaders: Train 50000 examples/391 iters, Test 10000 examples/79 iters
+2026-10-07:12:40:30 [DEBUG   ] [lira.py:168] use autoencoder as atk model
+2026-10-07:12:40:30 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:40:30 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:40:31 [DEBUG   ] [lira.py:639] ============================
+2026-10-07:12:40:31 [DEBUG   ] [lira.py:640] ============================
+2026-10-07:12:40:31 [DEBUG   ] [lira.py:642] BEGIN TRAINING >>>>>>
+2026-10-07:12:40:31 [DEBUG   ] [lira.py:662] ===== EPOCH: 1/51 CLS 1/1 =====
+2026-10-07:12:40:53 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:40:53 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:40:53 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:40:53 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:41:01 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.21356562052814054,
+ 'clean_test_loss_avg_over_batch': 2.6806858762910095,
+ 'epoch': 1,
+ 'test_acc': 0.1,
+ 'test_asr': 1.0,
+ 'test_ra': 0.0,
+ 'train_epoch_loss_avg_over_batch': 0.2685525963140075}
+2026-10-07:12:41:01 [DEBUG   ] [pyplot.py:497] Loaded backend agg version v2.2.
+2026-10-07:12:41:01 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:41:01 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:41:01 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:41:01 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:41:01 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:41:01 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:41:01 [DEBUG   ] [lira.py:662] ===== EPOCH: 2/51 CLS 1/1 =====
+2026-10-07:12:41:18 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:41:18 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:41:19 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:41:19 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:41:27 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.06765664153745476,
+ 'clean_test_loss_avg_over_batch': 4.1111584434026405,
+ 'epoch': 2,
+ 'test_acc': 0.1049,
+ 'test_asr': 0.9972222222222222,
+ 'test_ra': 0.0026666666666666666,
+ 'train_epoch_loss_avg_over_batch': 0.055298893796301984}
+2026-10-07:12:41:27 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:41:27 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:41:27 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:41:27 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:41:27 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:41:27 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:41:27 [DEBUG   ] [lira.py:662] ===== EPOCH: 3/51 CLS 1/1 =====
+2026-10-07:12:41:47 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:41:47 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:41:47 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:41:47 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:41:54 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.07640327219392212,
+ 'clean_test_loss_avg_over_batch': 3.915838286846499,
+ 'epoch': 3,
+ 'test_acc': 0.1775,
+ 'test_asr': 0.9824444444444445,
+ 'test_ra': 0.01711111111111111,
+ 'train_epoch_loss_avg_over_batch': 0.0003783563819957365}
+2026-10-07:12:41:54 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:41:54 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:41:54 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:41:54 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:41:54 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:41:54 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:41:54 [DEBUG   ] [lira.py:662] ===== EPOCH: 4/51 CLS 1/1 =====
+2026-10-07:12:42:16 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:42:16 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:42:16 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:42:16 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:42:25 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.1357058165988452,
+ 'clean_test_loss_avg_over_batch': 3.094594448427611,
+ 'epoch': 4,
+ 'test_acc': 0.2009,
+ 'test_asr': 0.9636666666666667,
+ 'test_ra': 0.034777777777777776,
+ 'train_epoch_loss_avg_over_batch': 0.00030468671728698017}
+2026-10-07:12:42:25 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:42:25 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:42:25 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:42:25 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:42:25 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:42:25 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:42:25 [DEBUG   ] [lira.py:662] ===== EPOCH: 5/51 CLS 1/1 =====
+2026-10-07:12:42:47 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:42:47 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:42:47 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:42:47 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:42:54 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.034645430350177725,
+ 'clean_test_loss_avg_over_batch': 4.5168451508389245,
+ 'epoch': 5,
+ 'test_acc': 0.1216,
+ 'test_asr': 0.9958888888888889,
+ 'test_ra': 0.004111111111111111,
+ 'train_epoch_loss_avg_over_batch': 0.00024281486940426963}
+2026-10-07:12:42:54 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:42:54 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:42:55 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:42:55 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:42:55 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:42:55 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:42:55 [DEBUG   ] [lira.py:662] ===== EPOCH: 6/51 CLS 1/1 =====
+2026-10-07:12:43:16 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:43:16 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:43:16 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:43:16 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:43:25 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.053287386736819445,
+ 'clean_test_loss_avg_over_batch': 4.628935901424553,
+ 'epoch': 6,
+ 'test_acc': 0.1546,
+ 'test_asr': 0.9822222222222222,
+ 'test_ra': 0.017555555555555557,
+ 'train_epoch_loss_avg_over_batch': 0.00017215789327386182}
+2026-10-07:12:43:25 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:43:25 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:43:25 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:43:25 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:43:25 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:43:25 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:43:25 [DEBUG   ] [lira.py:662] ===== EPOCH: 7/51 CLS 1/1 =====
+2026-10-07:12:43:47 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:43:47 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:43:47 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:43:47 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:43:55 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.041985863898421676,
+ 'clean_test_loss_avg_over_batch': 4.2306139559685425,
+ 'epoch': 7,
+ 'test_acc': 0.158,
+ 'test_asr': 0.9916666666666667,
+ 'test_ra': 0.008333333333333333,
+ 'train_epoch_loss_avg_over_batch': 0.00013671632019358258}
+2026-10-07:12:43:55 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:43:55 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:43:55 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:43:55 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:43:55 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:43:56 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:43:56 [DEBUG   ] [lira.py:662] ===== EPOCH: 8/51 CLS 1/1 =====
+2026-10-07:12:44:17 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:44:17 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:44:17 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:44:17 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:44:25 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.0902766733312271,
+ 'clean_test_loss_avg_over_batch': 3.163743085499051,
+ 'epoch': 8,
+ 'test_acc': 0.2474,
+ 'test_asr': 0.9722222222222222,
+ 'test_ra': 0.02711111111111111,
+ 'train_epoch_loss_avg_over_batch': 0.00013633574652957835}
+2026-10-07:12:44:25 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:44:25 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:44:26 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:44:26 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:44:26 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:44:26 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:44:26 [DEBUG   ] [lira.py:662] ===== EPOCH: 9/51 CLS 1/1 =====
+2026-10-07:12:44:47 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:44:47 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:44:47 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:44:47 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:44:55 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.06558461012449902,
+ 'clean_test_loss_avg_over_batch': 3.860820000684714,
+ 'epoch': 9,
+ 'test_acc': 0.1793,
+ 'test_asr': 0.9798888888888889,
+ 'test_ra': 0.019777777777777776,
+ 'train_epoch_loss_avg_over_batch': 0.00011053907469094299}
+2026-10-07:12:44:55 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:44:55 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:44:56 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:44:56 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:44:56 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:44:56 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:44:56 [DEBUG   ] [lira.py:662] ===== EPOCH: 10/51 CLS 1/1 =====
+2026-10-07:12:45:13 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:45:13 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:45:13 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:45:13 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:45:21 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.02822386452429731,
+ 'clean_test_loss_avg_over_batch': 4.8239894094346445,
+ 'epoch': 10,
+ 'test_acc': 0.1714,
+ 'test_asr': 0.9932222222222222,
+ 'test_ra': 0.006111111111111111,
+ 'train_epoch_loss_avg_over_batch': 8.692199977976206e-05}
+2026-10-07:12:45:21 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:45:21 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:45:21 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:45:21 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:45:21 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:45:21 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:45:21 [DEBUG   ] [lira.py:662] ===== EPOCH: 11/51 CLS 1/1 =====
+2026-10-07:12:45:43 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:45:43 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:45:43 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:45:43 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:45:52 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.04203156347740704,
+ 'clean_test_loss_avg_over_batch': 4.334520038170151,
+ 'epoch': 11,
+ 'test_acc': 0.1652,
+ 'test_asr': 0.9893333333333333,
+ 'test_ra': 0.010666666666666666,
+ 'train_epoch_loss_avg_over_batch': 8.786785340937961e-05}
+2026-10-07:12:45:52 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:45:52 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:45:52 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:45:52 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:45:52 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:45:52 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:45:52 [DEBUG   ] [lira.py:662] ===== EPOCH: 12/51 CLS 1/1 =====
+2026-10-07:12:46:13 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:46:13 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:46:13 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:46:13 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:46:21 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.12553919494991572,
+ 'clean_test_loss_avg_over_batch': 3.6626787578003315,
+ 'epoch': 12,
+ 'test_acc': 0.2584,
+ 'test_asr': 0.9606666666666667,
+ 'test_ra': 0.03877777777777778,
+ 'train_epoch_loss_avg_over_batch': 7.389199146202415e-05}
+2026-10-07:12:46:21 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:46:21 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:46:21 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:46:21 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:46:21 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:46:21 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:46:21 [DEBUG   ] [lira.py:662] ===== EPOCH: 13/51 CLS 1/1 =====
+2026-10-07:12:46:41 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:46:41 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:46:41 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:46:41 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:46:50 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.0415371296219003,
+ 'clean_test_loss_avg_over_batch': 4.195107239711134,
+ 'epoch': 13,
+ 'test_acc': 0.1862,
+ 'test_asr': 0.9883333333333333,
+ 'test_ra': 0.011666666666666667,
+ 'train_epoch_loss_avg_over_batch': 6.801826593207649e-05}
+2026-10-07:12:46:50 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:46:50 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:46:50 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:46:50 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:46:50 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:46:50 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:46:50 [DEBUG   ] [lira.py:662] ===== EPOCH: 14/51 CLS 1/1 =====
+2026-10-07:12:47:10 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:47:10 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:47:10 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:47:10 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:47:18 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.05031685274041874,
+ 'clean_test_loss_avg_over_batch': 4.263389370109461,
+ 'epoch': 14,
+ 'test_acc': 0.2152,
+ 'test_asr': 0.9853333333333333,
+ 'test_ra': 0.014555555555555556,
+ 'train_epoch_loss_avg_over_batch': 7.547582620534048e-05}
+2026-10-07:12:47:18 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:47:18 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:47:19 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:47:19 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:47:19 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:47:19 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:47:19 [DEBUG   ] [lira.py:662] ===== EPOCH: 15/51 CLS 1/1 =====
+2026-10-07:12:47:39 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:47:39 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:47:39 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:47:39 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:47:46 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.03173588045780927,
+ 'clean_test_loss_avg_over_batch': 4.996526585349554,
+ 'epoch': 15,
+ 'test_acc': 0.1666,
+ 'test_asr': 0.9908888888888889,
+ 'test_ra': 0.009111111111111111,
+ 'train_epoch_loss_avg_over_batch': 7.077263577146303e-05}
+2026-10-07:12:47:46 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:47:46 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:47:46 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:47:46 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:47:46 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:47:46 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:47:46 [DEBUG   ] [lira.py:662] ===== EPOCH: 16/51 CLS 1/1 =====
+2026-10-07:12:48:07 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:48:07 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:48:07 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:48:07 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:48:16 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.042618757743440885,
+ 'clean_test_loss_avg_over_batch': 4.463299437414242,
+ 'epoch': 16,
+ 'test_acc': 0.1911,
+ 'test_asr': 0.986,
+ 'test_ra': 0.014,
+ 'train_epoch_loss_avg_over_batch': 5.797414026630595e-05}
+2026-10-07:12:48:16 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:48:16 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:48:16 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:48:16 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:48:16 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:48:16 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:48:16 [DEBUG   ] [lira.py:662] ===== EPOCH: 17/51 CLS 1/1 =====
+2026-10-07:12:48:37 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:48:37 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:48:37 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:48:37 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:48:45 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.05821172691042155,
+ 'clean_test_loss_avg_over_batch': 4.620843549317952,
+ 'epoch': 17,
+ 'test_acc': 0.1685,
+ 'test_asr': 0.9827777777777778,
+ 'test_ra': 0.01711111111111111,
+ 'train_epoch_loss_avg_over_batch': 5.899508082830088e-05}
+2026-10-07:12:48:45 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:48:45 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:48:46 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:48:46 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:48:46 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:48:46 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:48:46 [DEBUG   ] [lira.py:662] ===== EPOCH: 18/51 CLS 1/1 =====
+2026-10-07:12:49:07 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:49:07 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:49:07 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:49:07 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:49:16 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.05267671773761091,
+ 'clean_test_loss_avg_over_batch': 5.16699321964119,
+ 'epoch': 18,
+ 'test_acc': 0.1665,
+ 'test_asr': 0.9822222222222222,
+ 'test_ra': 0.017666666666666667,
+ 'train_epoch_loss_avg_over_batch': 4.840419701842918e-05}
+2026-10-07:12:49:16 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:49:16 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:49:16 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:49:16 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:49:16 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:49:16 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:49:16 [DEBUG   ] [lira.py:662] ===== EPOCH: 19/51 CLS 1/1 =====
+2026-10-07:12:49:38 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:49:38 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:49:38 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:49:38 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:49:46 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.07326570056168966,
+ 'clean_test_loss_avg_over_batch': 4.204741064506241,
+ 'epoch': 19,
+ 'test_acc': 0.2171,
+ 'test_asr': 0.972,
+ 'test_ra': 0.02788888888888889,
+ 'train_epoch_loss_avg_over_batch': 4.823580431979667e-05}
+2026-10-07:12:49:46 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:49:46 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:49:47 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:49:47 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:49:47 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:49:47 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:49:47 [DEBUG   ] [lira.py:662] ===== EPOCH: 20/51 CLS 1/1 =====
+2026-10-07:12:50:08 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:50:08 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:50:08 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:50:08 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:50:17 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.11860373385355506,
+ 'clean_test_loss_avg_over_batch': 3.8441140410266343,
+ 'epoch': 20,
+ 'test_acc': 0.2382,
+ 'test_asr': 0.9588888888888889,
+ 'test_ra': 0.041,
+ 'train_epoch_loss_avg_over_batch': 4.560349384693669e-05}
+2026-10-07:12:50:17 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:50:17 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:50:17 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:50:17 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:50:17 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:50:17 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:50:17 [DEBUG   ] [lira.py:662] ===== EPOCH: 21/51 CLS 1/1 =====
+2026-10-07:12:50:38 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:50:38 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:50:38 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:50:38 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:50:47 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.08606109909818206,
+ 'clean_test_loss_avg_over_batch': 4.786852685711052,
+ 'epoch': 21,
+ 'test_acc': 0.1867,
+ 'test_asr': 0.969,
+ 'test_ra': 0.03088888888888889,
+ 'train_epoch_loss_avg_over_batch': 5.0119029930052684e-05}
+2026-10-07:12:50:47 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:50:47 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:50:48 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:50:48 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:50:48 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:50:48 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:50:48 [DEBUG   ] [lira.py:662] ===== EPOCH: 22/51 CLS 1/1 =====
+2026-10-07:12:51:10 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:51:10 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:51:10 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:51:10 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:51:19 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.0775792815420829,
+ 'clean_test_loss_avg_over_batch': 4.454233604141429,
+ 'epoch': 22,
+ 'test_acc': 0.2311,
+ 'test_asr': 0.9727777777777777,
+ 'test_ra': 0.02711111111111111,
+ 'train_epoch_loss_avg_over_batch': 4.0169193834270847e-05}
+2026-10-07:12:51:19 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:51:19 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:51:19 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:51:19 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:51:19 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:51:19 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:51:19 [DEBUG   ] [lira.py:662] ===== EPOCH: 23/51 CLS 1/1 =====
+2026-10-07:12:51:40 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:51:40 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:51:40 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:51:40 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:51:49 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.15873744328257064,
+ 'clean_test_loss_avg_over_batch': 3.8157019826430307,
+ 'epoch': 23,
+ 'test_acc': 0.2709,
+ 'test_asr': 0.9365555555555556,
+ 'test_ra': 0.06311111111111112,
+ 'train_epoch_loss_avg_over_batch': 3.7768655534084075e-05}
+2026-10-07:12:51:49 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:51:49 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:51:49 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:51:49 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:51:49 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:51:49 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:51:49 [DEBUG   ] [lira.py:662] ===== EPOCH: 24/51 CLS 1/1 =====
+2026-10-07:12:52:11 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:52:11 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:52:11 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:52:11 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:52:19 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.05701469952686572,
+ 'clean_test_loss_avg_over_batch': 4.554274540913256,
+ 'epoch': 24,
+ 'test_acc': 0.2,
+ 'test_asr': 0.9807777777777777,
+ 'test_ra': 0.01911111111111111,
+ 'train_epoch_loss_avg_over_batch': 3.761244223532838e-05}
+2026-10-07:12:52:19 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:52:19 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:52:19 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:52:19 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:52:19 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:52:19 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:52:19 [DEBUG   ] [lira.py:662] ===== EPOCH: 25/51 CLS 1/1 =====
+2026-10-07:12:52:41 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:52:41 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:52:41 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:52:41 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:52:49 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.058295041375177006,
+ 'clean_test_loss_avg_over_batch': 4.984205427049082,
+ 'epoch': 25,
+ 'test_acc': 0.1983,
+ 'test_asr': 0.9801111111111112,
+ 'test_ra': 0.01988888888888889,
+ 'train_epoch_loss_avg_over_batch': 3.490990691207896e-05}
+2026-10-07:12:52:49 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:52:49 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:52:49 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:52:49 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:52:49 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:52:49 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:52:49 [DEBUG   ] [lira.py:662] ===== EPOCH: 26/51 CLS 1/1 =====
+2026-10-07:12:53:11 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:53:11 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:53:11 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:53:11 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:53:18 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.3635595902590684,
+ 'clean_test_loss_avg_over_batch': 2.85015998912763,
+ 'epoch': 26,
+ 'test_acc': 0.3779,
+ 'test_asr': 0.868,
+ 'test_ra': 0.13066666666666665,
+ 'train_epoch_loss_avg_over_batch': 3.291320802649785e-05}
+2026-10-07:12:53:18 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:53:18 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:53:18 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:53:18 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:53:18 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:53:18 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:53:18 [DEBUG   ] [lira.py:662] ===== EPOCH: 27/51 CLS 1/1 =====
+2026-10-07:12:53:39 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:53:39 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:53:40 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:53:40 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:53:48 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.15348301943339093,
+ 'clean_test_loss_avg_over_batch': 3.8930872542948665,
+ 'epoch': 27,
+ 'test_acc': 0.2512,
+ 'test_asr': 0.9395555555555556,
+ 'test_ra': 0.05988888888888889,
+ 'train_epoch_loss_avg_over_batch': 3.0487759831864987e-05}
+2026-10-07:12:53:48 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:53:48 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:53:49 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:53:49 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:53:49 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:53:49 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:53:49 [DEBUG   ] [lira.py:662] ===== EPOCH: 28/51 CLS 1/1 =====
+2026-10-07:12:54:08 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:54:08 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:54:08 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:54:08 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:54:16 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.04138505592627425,
+ 'clean_test_loss_avg_over_batch': 6.116537685635723,
+ 'epoch': 28,
+ 'test_acc': 0.1534,
+ 'test_asr': 0.9855555555555555,
+ 'test_ra': 0.014444444444444444,
+ 'train_epoch_loss_avg_over_batch': 3.811738979565347e-05}
+2026-10-07:12:54:16 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:54:16 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:54:16 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:54:16 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:54:16 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:54:16 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:54:16 [DEBUG   ] [lira.py:662] ===== EPOCH: 29/51 CLS 1/1 =====
+2026-10-07:12:54:37 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:54:37 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:54:37 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:54:37 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:54:46 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.09986055264590492,
+ 'clean_test_loss_avg_over_batch': 5.463863692706144,
+ 'epoch': 29,
+ 'test_acc': 0.1752,
+ 'test_asr': 0.9612222222222222,
+ 'test_ra': 0.03866666666666667,
+ 'train_epoch_loss_avg_over_batch': 4.838558759495724e-05}
+2026-10-07:12:54:46 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:54:46 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:54:46 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:54:46 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:54:46 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:54:46 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:54:46 [DEBUG   ] [lira.py:662] ===== EPOCH: 30/51 CLS 1/1 =====
+2026-10-07:12:55:06 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:55:06 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:55:07 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:55:07 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:55:15 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.08383148407537333,
+ 'clean_test_loss_avg_over_batch': 5.5080247951459285,
+ 'epoch': 30,
+ 'test_acc': 0.178,
+ 'test_asr': 0.9697777777777777,
+ 'test_ra': 0.030222222222222223,
+ 'train_epoch_loss_avg_over_batch': 3.0167046940358773e-05}
+2026-10-07:12:55:15 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:55:15 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:55:16 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:55:16 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:55:16 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:55:16 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:55:16 [DEBUG   ] [lira.py:662] ===== EPOCH: 31/51 CLS 1/1 =====
+2026-10-07:12:55:37 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:55:37 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:55:37 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:55:37 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:55:45 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.0895394846587114,
+ 'clean_test_loss_avg_over_batch': 5.206215810172165,
+ 'epoch': 31,
+ 'test_acc': 0.1864,
+ 'test_asr': 0.9686666666666667,
+ 'test_ra': 0.03122222222222222,
+ 'train_epoch_loss_avg_over_batch': 2.6124841134354045e-05}
+2026-10-07:12:55:45 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:55:45 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:55:45 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:55:45 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:55:45 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:55:46 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:55:46 [DEBUG   ] [lira.py:662] ===== EPOCH: 32/51 CLS 1/1 =====
+2026-10-07:12:56:04 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:56:04 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:56:04 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:56:04 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:56:13 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.24671104309004796,
+ 'clean_test_loss_avg_over_batch': 3.6246058971067017,
+ 'epoch': 32,
+ 'test_acc': 0.2834,
+ 'test_asr': 0.9102222222222223,
+ 'test_ra': 0.08911111111111111,
+ 'train_epoch_loss_avg_over_batch': 2.908485068290496e-05}
+2026-10-07:12:56:13 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:56:13 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:56:13 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:56:13 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:56:13 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:56:13 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:56:13 [DEBUG   ] [lira.py:662] ===== EPOCH: 33/51 CLS 1/1 =====
+2026-10-07:12:56:33 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:56:33 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:56:33 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:56:33 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:56:41 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.09524794347899061,
+ 'clean_test_loss_avg_over_batch': 5.359213853184181,
+ 'epoch': 33,
+ 'test_acc': 0.1862,
+ 'test_asr': 0.9638888888888889,
+ 'test_ra': 0.03611111111111111,
+ 'train_epoch_loss_avg_over_batch': 2.5041254673033458e-05}
+2026-10-07:12:56:41 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:56:41 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:56:41 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:56:41 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:56:41 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:56:41 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:56:41 [DEBUG   ] [lira.py:662] ===== EPOCH: 34/51 CLS 1/1 =====
+2026-10-07:12:57:02 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:57:02 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:57:02 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:57:02 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:57:10 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.055541272445673674,
+ 'clean_test_loss_avg_over_batch': 5.164461576485936,
+ 'epoch': 34,
+ 'test_acc': 0.1781,
+ 'test_asr': 0.9814444444444445,
+ 'test_ra': 0.018555555555555554,
+ 'train_epoch_loss_avg_over_batch': 3.187662946847495e-05}
+2026-10-07:12:57:10 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:57:10 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:57:10 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:57:10 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:57:10 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:57:11 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:57:11 [DEBUG   ] [lira.py:662] ===== EPOCH: 35/51 CLS 1/1 =====
+2026-10-07:12:57:32 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:57:32 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:57:32 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:57:32 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:57:41 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.06106426732116182,
+ 'clean_test_loss_avg_over_batch': 5.481758540189719,
+ 'epoch': 35,
+ 'test_acc': 0.1732,
+ 'test_asr': 0.9782222222222222,
+ 'test_ra': 0.021777777777777778,
+ 'train_epoch_loss_avg_over_batch': 1.7840316472085678e-05}
+2026-10-07:12:57:41 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:57:41 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:57:41 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:57:41 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:57:41 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:57:41 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:57:41 [DEBUG   ] [lira.py:662] ===== EPOCH: 36/51 CLS 1/1 =====
+2026-10-07:12:58:03 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:58:03 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:58:03 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:58:03 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:58:12 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.135691111671253,
+ 'clean_test_loss_avg_over_batch': 4.714367000362541,
+ 'epoch': 36,
+ 'test_acc': 0.2206,
+ 'test_asr': 0.9483333333333334,
+ 'test_ra': 0.051555555555555556,
+ 'train_epoch_loss_avg_over_batch': 2.8263823853237076e-05}
+2026-10-07:12:58:12 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:58:12 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:58:12 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:58:12 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:58:12 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:58:12 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:58:12 [DEBUG   ] [lira.py:662] ===== EPOCH: 37/51 CLS 1/1 =====
+2026-10-07:12:58:34 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:58:34 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:58:34 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:58:34 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:58:43 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.18552739362061862,
+ 'clean_test_loss_avg_over_batch': 4.348695573927481,
+ 'epoch': 37,
+ 'test_acc': 0.2452,
+ 'test_asr': 0.9282222222222222,
+ 'test_ra': 0.07111111111111111,
+ 'train_epoch_loss_avg_over_batch': 2.0703487392530718e-05}
+2026-10-07:12:58:43 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:58:43 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:58:43 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:58:43 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:58:43 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:58:43 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:58:43 [DEBUG   ] [lira.py:662] ===== EPOCH: 38/51 CLS 1/1 =====
+2026-10-07:12:59:05 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:59:05 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:59:05 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:59:05 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:59:13 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.07725405716665194,
+ 'clean_test_loss_avg_over_batch': 5.928795561005797,
+ 'epoch': 38,
+ 'test_acc': 0.2126,
+ 'test_asr': 0.9684444444444444,
+ 'test_ra': 0.03155555555555556,
+ 'train_epoch_loss_avg_over_batch': 2.4443936692507893e-05}
+2026-10-07:12:59:13 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:59:13 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:59:13 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:59:13 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:59:13 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:59:14 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:59:14 [DEBUG   ] [lira.py:662] ===== EPOCH: 39/51 CLS 1/1 =====
+2026-10-07:12:59:36 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:12:59:36 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:12:59:36 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:12:59:36 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:12:59:44 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.05356745846884351,
+ 'clean_test_loss_avg_over_batch': 6.553359955171995,
+ 'epoch': 39,
+ 'test_acc': 0.1431,
+ 'test_asr': 0.9807777777777777,
+ 'test_ra': 0.018333333333333333,
+ 'train_epoch_loss_avg_over_batch': 2.7499070467817456e-05}
+2026-10-07:12:59:44 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:12:59:44 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:12:59:45 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:12:59:45 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:12:59:45 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:12:59:45 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:12:59:45 [DEBUG   ] [lira.py:662] ===== EPOCH: 40/51 CLS 1/1 =====
+2026-10-07:13:00:06 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:13:00:06 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:13:00:06 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:00:06 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:13:00:15 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.19094760694973906,
+ 'clean_test_loss_avg_over_batch': 4.669238153892227,
+ 'epoch': 40,
+ 'test_acc': 0.233,
+ 'test_asr': 0.9298888888888889,
+ 'test_ra': 0.06966666666666667,
+ 'train_epoch_loss_avg_over_batch': 2.0682256946382814e-05}
+2026-10-07:13:00:15 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:00:15 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:00:15 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:00:15 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:00:15 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:00:15 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:00:15 [DEBUG   ] [lira.py:662] ===== EPOCH: 41/51 CLS 1/1 =====
+2026-10-07:13:00:36 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:13:00:36 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:13:00:36 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:00:36 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:13:00:43 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.1793676573835628,
+ 'clean_test_loss_avg_over_batch': 5.148871198485169,
+ 'epoch': 41,
+ 'test_acc': 0.2176,
+ 'test_asr': 0.9315555555555556,
+ 'test_ra': 0.06733333333333333,
+ 'train_epoch_loss_avg_over_batch': 1.8008113091983082e-05}
+2026-10-07:13:00:43 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:00:43 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:00:43 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:00:43 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:00:43 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:00:43 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:00:43 [DEBUG   ] [lira.py:662] ===== EPOCH: 42/51 CLS 1/1 =====
+2026-10-07:13:01:03 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:13:01:03 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:13:01:03 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:01:03 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:13:01:11 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.26160154774994915,
+ 'clean_test_loss_avg_over_batch': 4.218842440013644,
+ 'epoch': 42,
+ 'test_acc': 0.2708,
+ 'test_asr': 0.9016666666666666,
+ 'test_ra': 0.09733333333333333,
+ 'train_epoch_loss_avg_over_batch': 2.251254362573689e-05}
+2026-10-07:13:01:11 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:01:11 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:01:11 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:01:11 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:01:11 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:01:12 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:01:12 [DEBUG   ] [lira.py:662] ===== EPOCH: 43/51 CLS 1/1 =====
+2026-10-07:13:01:33 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:13:01:33 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:13:01:33 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:01:33 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:13:01:42 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.08055260882411204,
+ 'clean_test_loss_avg_over_batch': 6.14817577675928,
+ 'epoch': 43,
+ 'test_acc': 0.1638,
+ 'test_asr': 0.9713333333333334,
+ 'test_ra': 0.028666666666666667,
+ 'train_epoch_loss_avg_over_batch': 1.9341261538680256e-05}
+2026-10-07:13:01:42 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:01:42 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:01:42 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:01:42 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:01:42 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:01:42 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:01:42 [DEBUG   ] [lira.py:662] ===== EPOCH: 44/51 CLS 1/1 =====
+2026-10-07:13:02:03 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:13:02:03 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:13:02:03 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:02:03 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:13:02:12 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.09145951814110011,
+ 'clean_test_loss_avg_over_batch': 6.299093312855009,
+ 'epoch': 44,
+ 'test_acc': 0.1636,
+ 'test_asr': 0.9643333333333334,
+ 'test_ra': 0.035,
+ 'train_epoch_loss_avg_over_batch': 1.5039712686411316e-05}
+2026-10-07:13:02:12 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:02:12 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:02:12 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:02:12 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:02:12 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:02:12 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:02:12 [DEBUG   ] [lira.py:662] ===== EPOCH: 45/51 CLS 1/1 =====
+2026-10-07:13:02:34 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:13:02:34 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:13:02:34 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:02:34 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:13:02:42 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.13239697954604324,
+ 'clean_test_loss_avg_over_batch': 5.129520881025097,
+ 'epoch': 45,
+ 'test_acc': 0.1968,
+ 'test_asr': 0.9505555555555556,
+ 'test_ra': 0.04922222222222222,
+ 'train_epoch_loss_avg_over_batch': 2.324975496112457e-05}
+2026-10-07:13:02:42 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:02:42 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:02:43 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:02:43 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:02:43 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:02:43 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:02:43 [DEBUG   ] [lira.py:662] ===== EPOCH: 46/51 CLS 1/1 =====
+2026-10-07:13:03:05 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:13:03:05 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:13:03:05 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:03:05 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:13:03:13 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.12491925018773951,
+ 'clean_test_loss_avg_over_batch': 5.181628064264225,
+ 'epoch': 46,
+ 'test_acc': 0.2098,
+ 'test_asr': 0.9507777777777778,
+ 'test_ra': 0.04911111111111111,
+ 'train_epoch_loss_avg_over_batch': 2.071488072322904e-05}
+2026-10-07:13:03:13 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:03:13 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:03:13 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:03:13 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:03:13 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:03:13 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:03:13 [DEBUG   ] [lira.py:662] ===== EPOCH: 47/51 CLS 1/1 =====
+2026-10-07:13:03:35 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:13:03:35 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:13:03:35 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:03:35 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:13:03:44 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.0959200438794116,
+ 'clean_test_loss_avg_over_batch': 5.803017827528942,
+ 'epoch': 47,
+ 'test_acc': 0.1804,
+ 'test_asr': 0.963,
+ 'test_ra': 0.035666666666666666,
+ 'train_epoch_loss_avg_over_batch': 1.6693860858289446e-05}
+2026-10-07:13:03:44 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:03:44 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:03:44 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:03:44 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:03:44 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:03:45 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:03:45 [DEBUG   ] [lira.py:662] ===== EPOCH: 48/51 CLS 1/1 =====
+2026-10-07:13:04:06 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:13:04:06 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:13:04:06 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:04:06 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:13:04:15 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.2481992954099682,
+ 'clean_test_loss_avg_over_batch': 4.722908361048638,
+ 'epoch': 48,
+ 'test_acc': 0.2586,
+ 'test_asr': 0.9082222222222223,
+ 'test_ra': 0.08811111111111111,
+ 'train_epoch_loss_avg_over_batch': 2.284242664816881e-05}
+2026-10-07:13:04:15 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:04:15 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:04:15 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:04:15 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:04:15 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:04:15 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:04:15 [DEBUG   ] [lira.py:662] ===== EPOCH: 49/51 CLS 1/1 =====
+2026-10-07:13:04:37 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:13:04:37 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:13:04:37 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:04:37 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:13:04:46 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.18502580227566437,
+ 'clean_test_loss_avg_over_batch': 5.356900420369981,
+ 'epoch': 49,
+ 'test_acc': 0.2205,
+ 'test_asr': 0.9345555555555556,
+ 'test_ra': 0.06266666666666666,
+ 'train_epoch_loss_avg_over_batch': 1.394856157017178e-05}
+2026-10-07:13:04:46 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:04:46 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:04:47 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:04:47 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:04:47 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:04:47 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:04:47 [DEBUG   ] [lira.py:662] ===== EPOCH: 50/51 CLS 1/1 =====
+2026-10-07:13:05:08 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:13:05:08 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:13:05:08 [INFO    ] [bd_dataset_v2.py:133] save file format is .png
+2026-10-07:13:05:08 [INFO    ] [lira.py:697] Compose(
+    Normalize(mean=[0.0, 0.0, 0.0], std=[4.048582995951417, 4.11522633744856, 3.8314176245210727])
+    Normalize(mean=[-0.4914, -0.4822, -0.4465], std=[1.0, 1.0, 1.0])
+)
+2026-10-07:13:05:17 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.059187146795677464,
+ 'clean_test_loss_avg_over_batch': 6.306134712846974,
+ 'epoch': 50,
+ 'test_acc': 0.1425,
+ 'test_asr': 0.978,
+ 'test_ra': 0.021222222222222222,
+ 'train_epoch_loss_avg_over_batch': 2.221897964189428e-05}
+2026-10-07:13:05:17 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:05:17 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:05:18 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:05:18 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:05:18 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:05:18 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:05:18 [DEBUG   ] [trainer_cls.py:87] return df with np.nan and None converted by str()
+2026-10-07:13:05:18 [DEBUG   ] [lira.py:836] ====> ARGS
+2026-10-07:13:05:18 [DEBUG   ] [lira.py:837] Namespace(num_workers=8, pin_memory=True, non_blocking=True, prefetch=False, amp=False, device='cuda', client_optimizer='sgd', dataset='cifar10', dataset_path='/root/autodl-tmp/data/cifar10', frequency_save=0, batch_size=128, lr=0.01, lr_scheduler='CosineAnnealingLR', model='preactresnet18', random_seed=42, sgd_momentum=0.9, wd=0.0005, epochs=100, random_rotation=10, random_crop=5, attack='lira', attack_model='autoencoder', lr_atk=0.0001, attack_label_trans='all2one', attack_target=0, eps=0.01, test_eps=0.01, alpha=0.5, test_alpha=0.5, optimizer='sgd', both_train_epochs=50, fix_generator_epoch=1, steplr_gamma=0.1, steplr_milestones=[50, 100, 150, 200], finetune_eps=0.01, finetune_alpha=0.5, finetune_client_optimizer='sgd', finetune_sgd_momentum=0.9, finetune_wd=0.0005, finetune_lr=0.01, finetune_lr_scheduler='MultiStepLR', finetune_steplr_gamma=0.1, finetune_steplr_milestones=[50, 100, 150, 200], yaml_path='/root/miniconda3/lib/python3.12/site-packages/backdoorbench/attack/../config/attack/prototype/cifar10.yaml', bd_yaml_path='/root/miniconda3/lib/python3.12/site-packages/backdoorbench/attack/../config/attack/lira/default.yaml', train_epoch=1, epochs_per_external_eval=50, best_threshold=0.1, verbose=1, avoid_clsmodel_reinitialization=True, test_n_size=10, test_use_train_best=False, test_use_train_last=True, terminal_info=['/root/miniconda3/lib/python3.12/site-packages/backdoorbench/attack/lira.py', '--model', 'preactresnet18', '--dataset', 'cifar10', '--dataset_path', '/root/autodl-tmp/data', '--random_seed', '42', '--epochs', '100', '--num_workers', '8', '--device', 'cuda'], num_classes=10, input_height=32, input_width=32, input_channel=3, img_size=(32, 32, 3), save_path='./record/20261007_124023_lira_attack_lira_KPAn')
+2026-10-07:13:05:20 [DEBUG   ] [lira.py:418] dataset_and_transform_generate done
+2026-10-07:13:05:22 [DEBUG   ] [lira.py:418] dataset_and_transform_generate done
+2026-10-07:13:05:22 [DEBUG   ] [lira.py:168] use autoencoder as atk model
+2026-10-07:13:05:22 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:13:05:22 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:13:05:23 [DEBUG   ] [model_trainer_generate.py:59] image_size ONLY apply for vit!!!
+If you use vit make sure you set the image size!
+2026-10-07:13:05:23 [DEBUG   ] [model_trainer_generate.py:65] Make sure you want PreActResNet18, which is NOT resnet18.
+2026-10-07:13:05:23 [INFO    ] [lira.py:451] atk stage1, Optimizer: SGD (
+Parameter Group 0
+    dampening: 0
+    differentiable: False
+    foreach: None
+    fused: None
+    initial_lr: 0.01
+    lr: 0.01
+    maximize: False
+    momentum: 0.9
+    nesterov: False
+    weight_decay: 0.0005
+), scheduler: <torch.optim.lr_scheduler.CosineAnnealingLR object at 0x7f0e72362a20>
+2026-10-07:13:05:23 [DEBUG   ] [lira.py:867] PreActResNet(
+  (conv1): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  (layer1): Sequential(
+    (0): PreActBlock(
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    )
+    (1): PreActBlock(
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    )
+  )
+  (layer2): Sequential(
+    (0): PreActBlock(
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv1): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (shortcut): Sequential(
+        (0): Conv2d(64, 128, kernel_size=(1, 1), stride=(2, 2), bias=False)
+      )
+    )
+    (1): PreActBlock(
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    )
+  )
+  (layer3): Sequential(
+    (0): PreActBlock(
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv1): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (shortcut): Sequential(
+        (0): Conv2d(128, 256, kernel_size=(1, 1), stride=(2, 2), bias=False)
+      )
+    )
+    (1): PreActBlock(
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    )
+  )
+  (layer4): Sequential(
+    (0): PreActBlock(
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv1): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (shortcut): Sequential(
+        (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+      )
+    )
+    (1): PreActBlock(
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    )
+  )
+  (avgpool): AdaptiveAvgPool2d(output_size=(1, 1))
+  (linear): Linear(in_features=512, out_features=10, bias=True)
+)
+2026-10-07:13:05:23 [INFO    ] [lira.py:868] atk stage2, optimizerC: SGD (
+Parameter Group 0
+    dampening: 0
+    differentiable: False
+    foreach: None
+    fused: None
+    initial_lr: 0.01
+    lr: 0.01
+    maximize: False
+    momentum: 0.9
+    nesterov: False
+    weight_decay: 0.0005
+), schedulerC: <torch.optim.lr_scheduler.MultiStepLR object at 0x7f0e72360470>
+2026-10-07:13:05:23 [DEBUG   ] [lira.py:871] ====> Post tensor transform
+2026-10-07:13:05:23 [DEBUG   ] [lira.py:872] PostTensorTransform(
+  (random_crop): RandomCrop(size=(32, 32), padding=5)
+  (random_rotation): RandomRotation(degrees=[-10.0, 10.0], interpolation=nearest, expand=False, fill=0)
+  (random_horizontal_flip): RandomHorizontalFlip(p=0.5)
+)
+2026-10-07:13:05:37 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 2.0080484840231883,
+ 'clean_test_loss_avg_over_batch': 2.1019702184049387,
+ 'epoch': 1,
+ 'test_acc': 0.5545,
+ 'test_asr': 0.4886666666666667,
+ 'test_ra': 0.46444444444444444,
+ 'train_epoch_loss_avg_over_batch': 0.049104192397793005}
+2026-10-07:13:05:37 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:05:37 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:05:38 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:05:38 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:05:38 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:05:38 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:05:52 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.0132446901898988,
+ 'clean_test_loss_avg_over_batch': 2.5030703695514536,
+ 'epoch': 2,
+ 'test_acc': 0.4747,
+ 'test_asr': 0.6867777777777778,
+ 'test_ra': 0.29555555555555557,
+ 'train_epoch_loss_avg_over_batch': 0.05303904620092124}
+2026-10-07:13:05:52 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:05:52 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:05:53 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:05:53 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:05:53 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:05:53 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:06:07 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.8024889331468394,
+ 'clean_test_loss_avg_over_batch': 1.7950591950476924,
+ 'epoch': 3,
+ 'test_acc': 0.5831,
+ 'test_asr': 0.49844444444444447,
+ 'test_ra': 0.45211111111111113,
+ 'train_epoch_loss_avg_over_batch': 0.04854944243055323}
+2026-10-07:13:06:07 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:06:07 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:06:07 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:06:07 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:06:07 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:06:08 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:06:21 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.3839455137790089,
+ 'clean_test_loss_avg_over_batch': 2.0484071004239817,
+ 'epoch': 4,
+ 'test_acc': 0.5483,
+ 'test_asr': 0.5865555555555556,
+ 'test_ra': 0.37544444444444447,
+ 'train_epoch_loss_avg_over_batch': 0.049386076869733654}
+2026-10-07:13:06:21 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:06:21 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:06:21 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:06:21 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:06:21 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:06:22 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:06:35 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.2654526023797585,
+ 'clean_test_loss_avg_over_batch': 1.9739139713818514,
+ 'epoch': 5,
+ 'test_acc': 0.5552,
+ 'test_asr': 0.6121111111111112,
+ 'test_ra': 0.366,
+ 'train_epoch_loss_avg_over_batch': 0.04759113572280654}
+2026-10-07:13:06:35 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:06:35 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:06:35 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:06:35 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:06:35 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:06:35 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:06:50 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.6320665033770279,
+ 'clean_test_loss_avg_over_batch': 1.654338261749171,
+ 'epoch': 6,
+ 'test_acc': 0.5908,
+ 'test_asr': 0.5271111111111111,
+ 'test_ra': 0.432,
+ 'train_epoch_loss_avg_over_batch': 0.051435349215550916}
+2026-10-07:13:06:50 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:06:50 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:06:50 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:06:50 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:06:50 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:06:51 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:07:05 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.5368489933685519,
+ 'clean_test_loss_avg_over_batch': 1.6791126049017604,
+ 'epoch': 7,
+ 'test_acc': 0.5622,
+ 'test_asr': 0.5363333333333333,
+ 'test_ra': 0.401,
+ 'train_epoch_loss_avg_over_batch': 0.04810769551093011}
+2026-10-07:13:07:05 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:07:05 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:07:05 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:07:05 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:07:05 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:07:05 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:07:19 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.493513802407493,
+ 'clean_test_loss_avg_over_batch': 1.4747034831892085,
+ 'epoch': 8,
+ 'test_acc': 0.6209,
+ 'test_asr': 0.5495555555555556,
+ 'test_ra': 0.41688888888888886,
+ 'train_epoch_loss_avg_over_batch': 0.05223945493493086}
+2026-10-07:13:07:19 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:07:19 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:07:20 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:07:20 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:07:20 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:07:20 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:07:33 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.9271567463874817,
+ 'clean_test_loss_avg_over_batch': 2.0941317383247084,
+ 'epoch': 9,
+ 'test_acc': 0.5009,
+ 'test_asr': 0.6912222222222222,
+ 'test_ra': 0.2877777777777778,
+ 'train_epoch_loss_avg_over_batch': 0.04719347833319927}
+2026-10-07:13:07:33 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:07:33 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:07:34 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:07:34 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:07:34 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:07:34 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:07:48 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.7063093361720233,
+ 'clean_test_loss_avg_over_batch': 2.7032512215119375,
+ 'epoch': 10,
+ 'test_acc': 0.4142,
+ 'test_asr': 0.7542222222222222,
+ 'test_ra': 0.23455555555555554,
+ 'train_epoch_loss_avg_over_batch': 0.051511938153716075}
+2026-10-07:13:07:48 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:07:48 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:07:48 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:07:48 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:07:48 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:07:48 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:08:02 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.8248175214713729,
+ 'clean_test_loss_avg_over_batch': 1.2837472256225875,
+ 'epoch': 11,
+ 'test_acc': 0.6461,
+ 'test_asr': 0.475,
+ 'test_ra': 0.4651111111111111,
+ 'train_epoch_loss_avg_over_batch': 0.053504190635164754}
+2026-10-07:13:08:02 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:08:02 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:08:02 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:08:02 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:08:02 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:08:02 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:08:16 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.3648568475750131,
+ 'clean_test_loss_avg_over_batch': 1.4722146701209153,
+ 'epoch': 12,
+ 'test_acc': 0.6138,
+ 'test_asr': 0.5584444444444444,
+ 'test_ra': 0.409,
+ 'train_epoch_loss_avg_over_batch': 0.05098743702920959}
+2026-10-07:13:08:16 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:08:16 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:08:17 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:08:17 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:08:17 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:08:17 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:08:31 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.7585827901329794,
+ 'clean_test_loss_avg_over_batch': 1.2209484313107744,
+ 'epoch': 13,
+ 'test_acc': 0.6541,
+ 'test_asr': 0.44533333333333336,
+ 'test_ra': 0.4945555555555556,
+ 'train_epoch_loss_avg_over_batch': 0.05157318294567563}
+2026-10-07:13:08:31 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:08:31 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:08:32 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:08:32 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:08:32 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:08:32 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:08:46 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.3738354184258152,
+ 'clean_test_loss_avg_over_batch': 1.6903979612302176,
+ 'epoch': 14,
+ 'test_acc': 0.5598,
+ 'test_asr': 0.5372222222222223,
+ 'test_ra': 0.4211111111111111,
+ 'train_epoch_loss_avg_over_batch': 0.05111584896007386}
+2026-10-07:13:08:46 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:08:46 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:08:46 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:08:46 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:08:46 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:08:46 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:09:00 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.0750070634022566,
+ 'clean_test_loss_avg_over_batch': 1.6996384602558763,
+ 'epoch': 15,
+ 'test_acc': 0.5319,
+ 'test_asr': 0.6217777777777778,
+ 'test_ra': 0.35333333333333333,
+ 'train_epoch_loss_avg_over_batch': 0.051538610399779305}
+2026-10-07:13:09:00 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:09:00 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:09:01 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:09:01 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:09:01 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:09:01 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:09:15 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.9155193097154859,
+ 'clean_test_loss_avg_over_batch': 2.0266505344004573,
+ 'epoch': 16,
+ 'test_acc': 0.4795,
+ 'test_asr': 0.6703333333333333,
+ 'test_ra': 0.2917777777777778,
+ 'train_epoch_loss_avg_over_batch': 0.050841784404824154}
+2026-10-07:13:09:16 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:09:16 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:09:16 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:09:16 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:09:16 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:09:16 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:09:30 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.0477689319932963,
+ 'clean_test_loss_avg_over_batch': 1.4994791836678227,
+ 'epoch': 17,
+ 'test_acc': 0.5863,
+ 'test_asr': 0.6464444444444445,
+ 'test_ra': 0.335,
+ 'train_epoch_loss_avg_over_batch': 0.0519151422421417}
+2026-10-07:13:09:30 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:09:30 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:09:30 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:09:30 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:09:30 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:09:31 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:09:45 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.486121850953975,
+ 'clean_test_loss_avg_over_batch': 1.5491800413856023,
+ 'epoch': 18,
+ 'test_acc': 0.5815,
+ 'test_asr': 0.5157777777777778,
+ 'test_ra': 0.4266666666666667,
+ 'train_epoch_loss_avg_over_batch': 0.054034950497472076}
+2026-10-07:13:09:45 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:09:45 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:09:45 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:09:45 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:09:45 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:09:45 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:10:00 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.448592395849631,
+ 'clean_test_loss_avg_over_batch': 1.4863807966437521,
+ 'epoch': 19,
+ 'test_acc': 0.6087,
+ 'test_asr': 0.5501111111111111,
+ 'test_ra': 0.4051111111111111,
+ 'train_epoch_loss_avg_over_batch': 0.051182524454744194}
+2026-10-07:13:10:00 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:10:00 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:10:00 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:10:00 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:10:00 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:10:00 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:10:15 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.17438912139812,
+ 'clean_test_loss_avg_over_batch': 1.7086280448527276,
+ 'epoch': 20,
+ 'test_acc': 0.5396,
+ 'test_asr': 0.589,
+ 'test_ra': 0.3798888888888889,
+ 'train_epoch_loss_avg_over_batch': 0.05333437294701634}
+2026-10-07:13:10:15 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:10:15 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:10:15 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:10:15 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:10:15 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:10:15 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:10:30 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.9543333960251069,
+ 'clean_test_loss_avg_over_batch': 1.5772222182418727,
+ 'epoch': 21,
+ 'test_acc': 0.553,
+ 'test_asr': 0.6474444444444445,
+ 'test_ra': 0.3322222222222222,
+ 'train_epoch_loss_avg_over_batch': 0.050784528759234324}
+2026-10-07:13:10:30 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:10:30 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:10:30 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:10:30 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:10:30 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:10:30 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:10:44 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.5405109902502785,
+ 'clean_test_loss_avg_over_batch': 1.10950320204602,
+ 'epoch': 22,
+ 'test_acc': 0.6745,
+ 'test_asr': 0.4958888888888889,
+ 'test_ra': 0.4572222222222222,
+ 'train_epoch_loss_avg_over_batch': 0.049172727436379855}
+2026-10-07:13:10:44 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:10:44 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:10:44 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:10:44 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:10:44 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:10:44 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:10:59 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.332568129183541,
+ 'clean_test_loss_avg_over_batch': 1.554710000376158,
+ 'epoch': 23,
+ 'test_acc': 0.5643,
+ 'test_asr': 0.5462222222222223,
+ 'test_ra': 0.39455555555555555,
+ 'train_epoch_loss_avg_over_batch': 0.05344175046447979}
+2026-10-07:13:10:59 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:10:59 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:10:59 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:10:59 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:10:59 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:10:59 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:11:14 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.9171762726676296,
+ 'clean_test_loss_avg_over_batch': 1.8719008014171938,
+ 'epoch': 24,
+ 'test_acc': 0.5042,
+ 'test_asr': 0.662,
+ 'test_ra': 0.30977777777777776,
+ 'train_epoch_loss_avg_over_batch': 0.0526175029049425}
+2026-10-07:13:11:14 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:11:14 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:11:14 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:11:14 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:11:14 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:11:15 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:11:29 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.4208041060138756,
+ 'clean_test_loss_avg_over_batch': 1.3371204220795934,
+ 'epoch': 25,
+ 'test_acc': 0.6004,
+ 'test_asr': 0.5295555555555556,
+ 'test_ra': 0.4076666666666667,
+ 'train_epoch_loss_avg_over_batch': 0.054286880340055584}
+2026-10-07:13:11:29 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:11:29 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:11:29 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:11:29 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:11:29 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:11:29 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:11:44 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.0988686672398742,
+ 'clean_test_loss_avg_over_batch': 1.4461393409137484,
+ 'epoch': 26,
+ 'test_acc': 0.5801,
+ 'test_asr': 0.5935555555555555,
+ 'test_ra': 0.36977777777777776,
+ 'train_epoch_loss_avg_over_batch': 0.05271662623785874}
+2026-10-07:13:11:44 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:11:44 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:11:44 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:11:44 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:11:44 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:11:44 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:11:59 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.1024644274107167,
+ 'clean_test_loss_avg_over_batch': 1.3063678002055688,
+ 'epoch': 27,
+ 'test_acc': 0.6136,
+ 'test_asr': 0.6213333333333333,
+ 'test_ra': 0.3586666666666667,
+ 'train_epoch_loss_avg_over_batch': 0.05374148103844403}
+2026-10-07:13:11:59 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:11:59 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:11:59 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:11:59 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:11:59 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:11:59 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:12:14 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.4736310612987464,
+ 'clean_test_loss_avg_over_batch': 1.2779429268233384,
+ 'epoch': 28,
+ 'test_acc': 0.6271,
+ 'test_asr': 0.4961111111111111,
+ 'test_ra': 0.45655555555555555,
+ 'train_epoch_loss_avg_over_batch': 0.05685331619075497}
+2026-10-07:13:12:14 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:12:14 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:12:14 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:12:14 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:12:14 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:12:14 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:12:29 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.4105016563979673,
+ 'clean_test_loss_avg_over_batch': 1.4785959765880923,
+ 'epoch': 29,
+ 'test_acc': 0.5792,
+ 'test_asr': 0.5197777777777778,
+ 'test_ra': 0.4057777777777778,
+ 'train_epoch_loss_avg_over_batch': 0.05358601398194385}
+2026-10-07:13:12:29 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:12:29 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:12:30 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:12:30 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:12:30 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:12:30 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:12:44 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.5689461902833322,
+ 'clean_test_loss_avg_over_batch': 1.2898532770857025,
+ 'epoch': 30,
+ 'test_acc': 0.6214,
+ 'test_asr': 0.486,
+ 'test_ra': 0.4471111111111111,
+ 'train_epoch_loss_avg_over_batch': 0.052141857614545414}
+2026-10-07:13:12:44 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:12:44 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:12:45 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:12:45 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:12:45 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:12:45 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:13:00 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.8217357984730895,
+ 'clean_test_loss_avg_over_batch': 1.7210346792317643,
+ 'epoch': 31,
+ 'test_acc': 0.5173,
+ 'test_asr': 0.691,
+ 'test_ra': 0.28544444444444445,
+ 'train_epoch_loss_avg_over_batch': 0.05109930633212371}
+2026-10-07:13:13:00 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:13:00 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:13:00 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:13:00 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:13:00 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:13:00 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:13:15 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.8629204765172072,
+ 'clean_test_loss_avg_over_batch': 1.7403711231448982,
+ 'epoch': 32,
+ 'test_acc': 0.5106,
+ 'test_asr': 0.6855555555555556,
+ 'test_ra': 0.29155555555555557,
+ 'train_epoch_loss_avg_over_batch': 0.05164929748991566}
+2026-10-07:13:13:15 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:13:15 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:13:15 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:13:15 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:13:15 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:13:15 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:13:29 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.9762728877470527,
+ 'clean_test_loss_avg_over_batch': 1.5703949898104124,
+ 'epoch': 33,
+ 'test_acc': 0.5264,
+ 'test_asr': 0.6418888888888888,
+ 'test_ra': 0.32622222222222225,
+ 'train_epoch_loss_avg_over_batch': 0.05405017196574746}
+2026-10-07:13:13:29 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:13:29 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:13:29 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:13:29 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:13:29 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:13:29 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:13:44 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.165331869058206,
+ 'clean_test_loss_avg_over_batch': 1.2328707062745397,
+ 'epoch': 34,
+ 'test_acc': 0.6147,
+ 'test_asr': 0.5841111111111111,
+ 'test_ra': 0.3801111111111111,
+ 'train_epoch_loss_avg_over_batch': 0.05148313801421229}
+2026-10-07:13:13:44 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:13:44 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:13:44 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:13:44 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:13:44 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:13:45 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:14:00 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.8135535372814662,
+ 'clean_test_loss_avg_over_batch': 1.7917599225346046,
+ 'epoch': 35,
+ 'test_acc': 0.4765,
+ 'test_asr': 0.6817777777777778,
+ 'test_ra': 0.30822222222222223,
+ 'train_epoch_loss_avg_over_batch': 0.05229348834137173}
+2026-10-07:13:14:00 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:14:00 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:14:00 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:14:00 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:14:00 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:14:00 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:14:15 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.6181826348036108,
+ 'clean_test_loss_avg_over_batch': 1.8927026458933383,
+ 'epoch': 36,
+ 'test_acc': 0.4736,
+ 'test_asr': 0.7635555555555555,
+ 'test_ra': 0.2252222222222222,
+ 'train_epoch_loss_avg_over_batch': 0.053495761023743836}
+2026-10-07:13:14:15 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:14:15 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:14:16 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:14:16 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:14:16 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:14:16 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:14:30 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.57120590646502,
+ 'clean_test_loss_avg_over_batch': 1.2014596333986596,
+ 'epoch': 37,
+ 'test_acc': 0.626,
+ 'test_asr': 0.474,
+ 'test_ra': 0.4504444444444444,
+ 'train_epoch_loss_avg_over_batch': 0.05245628945596154}
+2026-10-07:13:14:30 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:14:30 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:14:30 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:14:30 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:14:30 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:14:31 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:14:44 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.7293291360559598,
+ 'clean_test_loss_avg_over_batch': 1.7770828084100652,
+ 'epoch': 38,
+ 'test_acc': 0.4844,
+ 'test_asr': 0.7246666666666667,
+ 'test_ra': 0.25922222222222224,
+ 'train_epoch_loss_avg_over_batch': 0.05074872055550671}
+2026-10-07:13:14:44 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:14:44 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:14:44 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:14:44 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:14:44 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:14:45 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:14:59 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.9965000211353033,
+ 'clean_test_loss_avg_over_batch': 1.314992605885373,
+ 'epoch': 39,
+ 'test_acc': 0.6062,
+ 'test_asr': 0.632,
+ 'test_ra': 0.35,
+ 'train_epoch_loss_avg_over_batch': 0.05199091927484249}
+2026-10-07:13:14:59 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:14:59 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:14:59 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:14:59 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:14:59 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:14:59 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:15:13 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.5965113765756849,
+ 'clean_test_loss_avg_over_batch': 1.9100533723831177,
+ 'epoch': 40,
+ 'test_acc': 0.4518,
+ 'test_asr': 0.7707777777777778,
+ 'test_ra': 0.21944444444444444,
+ 'train_epoch_loss_avg_over_batch': 0.05177090271278415}
+2026-10-07:13:15:13 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:15:13 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:15:14 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:15:14 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:15:14 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:15:14 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:15:28 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.250804476335015,
+ 'clean_test_loss_avg_over_batch': 1.0724892337110978,
+ 'epoch': 41,
+ 'test_acc': 0.6539,
+ 'test_asr': 0.5585555555555556,
+ 'test_ra': 0.4161111111111111,
+ 'train_epoch_loss_avg_over_batch': 0.05141011949228432}
+2026-10-07:13:15:28 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:15:28 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:15:28 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:15:28 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:15:28 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:15:29 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:15:42 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.0671434100245085,
+ 'clean_test_loss_avg_over_batch': 1.3705315325833574,
+ 'epoch': 42,
+ 'test_acc': 0.5782,
+ 'test_asr': 0.5946666666666667,
+ 'test_ra': 0.37455555555555553,
+ 'train_epoch_loss_avg_over_batch': 0.050252363454941135}
+2026-10-07:13:15:43 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:15:43 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:15:43 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:15:43 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:15:43 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:15:43 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:15:57 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.307107796971227,
+ 'clean_test_loss_avg_over_batch': 1.1178822426856319,
+ 'epoch': 43,
+ 'test_acc': 0.6446,
+ 'test_asr': 0.5358888888888889,
+ 'test_ra': 0.4182222222222222,
+ 'train_epoch_loss_avg_over_batch': 0.04923497522702379}
+2026-10-07:13:15:57 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:15:57 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:15:58 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:15:58 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:15:58 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:15:58 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:16:12 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.0073193093420754,
+ 'clean_test_loss_avg_over_batch': 1.3850884294208092,
+ 'epoch': 44,
+ 'test_acc': 0.5857,
+ 'test_asr': 0.6277777777777778,
+ 'test_ra': 0.3566666666666667,
+ 'train_epoch_loss_avg_over_batch': 0.051362640843690965}
+2026-10-07:13:16:12 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:16:12 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:16:13 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:16:13 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:16:13 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:16:13 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:16:27 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.2425838431841891,
+ 'clean_test_loss_avg_over_batch': 1.2075641841828069,
+ 'epoch': 45,
+ 'test_acc': 0.6111,
+ 'test_asr': 0.5518888888888889,
+ 'test_ra': 0.4111111111111111,
+ 'train_epoch_loss_avg_over_batch': 0.05122603169973473}
+2026-10-07:13:16:27 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:16:27 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:16:28 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:16:28 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:16:28 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:16:28 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:16:42 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.9293938102856488,
+ 'clean_test_loss_avg_over_batch': 1.3961965351165095,
+ 'epoch': 46,
+ 'test_acc': 0.5636,
+ 'test_asr': 0.6641111111111111,
+ 'test_ra': 0.31566666666666665,
+ 'train_epoch_loss_avg_over_batch': 0.04906204344807169}
+2026-10-07:13:16:42 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:16:42 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:16:42 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:16:42 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:16:42 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:16:42 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:16:56 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.6546971436957238,
+ 'clean_test_loss_avg_over_batch': 1.6209179449685012,
+ 'epoch': 47,
+ 'test_acc': 0.484,
+ 'test_asr': 0.7322222222222222,
+ 'test_ra': 0.23544444444444446,
+ 'train_epoch_loss_avg_over_batch': 0.04709572814490713}
+2026-10-07:13:16:56 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:16:56 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:16:57 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:16:57 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:16:57 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:16:57 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:17:12 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 1.0372788578691616,
+ 'clean_test_loss_avg_over_batch': 1.3391627993764756,
+ 'epoch': 48,
+ 'test_acc': 0.5749,
+ 'test_asr': 0.5904444444444444,
+ 'test_ra': 0.33866666666666667,
+ 'train_epoch_loss_avg_over_batch': 0.04928922927354836}
+2026-10-07:13:17:12 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:17:12 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:17:12 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:17:12 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:17:12 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:17:12 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:17:27 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.9275152271902057,
+ 'clean_test_loss_avg_over_batch': 1.1041949112204057,
+ 'epoch': 49,
+ 'test_acc': 0.6393,
+ 'test_asr': 0.6464444444444445,
+ 'test_ra': 0.33555555555555555,
+ 'train_epoch_loss_avg_over_batch': 0.04937106204669341}
+2026-10-07:13:17:27 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:17:27 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:17:27 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:17:27 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:17:27 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:17:28 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:17:42 [INFO    ] [trainer_cls.py:64] {'bd_test_loss_avg_over_batch': 0.7181663043062452,
+ 'clean_test_loss_avg_over_batch': 1.3585114237628406,
+ 'epoch': 50,
+ 'test_acc': 0.5877,
+ 'test_asr': 0.7226666666666667,
+ 'test_ra': 0.2673333333333333,
+ 'train_epoch_loss_avg_over_batch': 0.04897528568096935}
+2026-10-07:13:17:42 [WARNING ] [trainer_cls.py:802] clean_test_loss_list contains None or len not match
+2026-10-07:13:17:42 [WARNING ] [trainer_cls.py:806] bd_test_loss_list contains None or len not match
+2026-10-07:13:17:42 [WARNING ] [trainer_cls.py:894] train_acc_list contains None, or len not match
+2026-10-07:13:17:42 [WARNING ] [trainer_cls.py:898] train_asr_list contains None, or len not match
+2026-10-07:13:17:42 [WARNING ] [trainer_cls.py:902] train_ra_list contains None, or len not match
+2026-10-07:13:17:42 [DEBUG   ] [trainer_cls.py:71] return df with np.nan and None converted by str()
+2026-10-07:13:17:42 [DEBUG   ] [trainer_cls.py:87] return df with np.nan and None converted by str()
+2026-10-07:13:17:42 [INFO    ] [save_load_attack.py:106] saving...
+2026-10-07:13:17:42 [INFO    ] [save_load_attack.py:114] Saved, folder path: ./record/20261007_124023_lira_attack_lira_KPAn

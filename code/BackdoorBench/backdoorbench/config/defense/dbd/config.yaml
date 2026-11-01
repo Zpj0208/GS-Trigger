@@ -1,0 +1,33 @@
+device: 'cuda'
+amp: True
+pin_memory: True
+non_blocking: True
+prefetch: True
+
+checkpoint_load:
+checkpoint_save:
+log:
+dataset_path: './data'
+dataset: 'cifar10'
+
+epochs: 100
+batch_size: 256
+num_workers: 4
+lr: 0.01
+lr_scheduler: CosineAnnealingLR
+model: 'preactresnet18'
+
+client_optimizer: 'sgd'
+sgd_momentum: 0.9 
+wd: 5.0e-4
+frequency_save: 0
+
+random_seed: 0
+
+epoch_self: 100 ####config[warmup][epoch] semi 测试用 100
+epoch_warmup: 10 ####config[warmup][epoch] semi
+batch_size_self: 512 #####config['batch_size'] pretrain
+temperature: 1 #####config['simclr']['temperature']
+epsilon: 0.5 ####config['semi']['epsilon']
+
+num_workers_semi: 0
