@@ -1,6 +1,6 @@
 # GS-Trigger
 
-Reproduction code and supporting data for **GS-Trigger: Learning geometric seeds for backdoor attacks under low-rate online poisoning**.
+Reproduction code and supporting data for **GS-Trigger: Gradient-steered seed trigger for backdoor implantation at low per-batch poisoning rates**.
 
 GS-Trigger learns a shared two-channel geometric seed during classifier training. The seed is expanded into a dense displacement field and applied through the WaNet sampling operator. The learned seed is frozen for inference. The Fixed comparison uses the corresponding normalized frozen seed.
 
@@ -33,9 +33,11 @@ The result script verifies all 2,200 epochs from the 22 primary training logs an
 
 | CIFAR-10 comparison | GS ASR (%) | Fixed ASR (%) | Runs per method |
 |---|---:|---:|---:|
-| PreActResNet-18 | 98.55 ± 1.53 | 70.87 ± 12.59 | 5 |
+| PreActResNet-18 | 98.35 ± 1.69 | 75.72 ± 7.39 | 4 |
 | WRN-34-10 | 85.85 ± 13.31 | 39.92 ± 26.10 | 3 |
 | ResNeXt-29 | 94.09 ± 3.51 | 42.76 ± 26.60 | 3 |
+
+The PreActResNet-18 row gives the four same-environment runs reported in the manuscript; the additional cross-environment seed-45 pair is reported separately in Supplementary Table S2.
 
 The RNG-isolated Free-minus-PSNR-matched Fixed mean ASR difference is 3.45 percentage points. The same three Free runs contribute to the two RNG-isolated comparisons. Variability is sample SD across training runs, not across epochs or images.
 
@@ -73,4 +75,4 @@ The distributed records have been checked for file integrity and statistical con
 
 The original Free seed-42 strength-control endpoint is 90.00% ASR. The separate mixed-gradient diagnostic endpoint is 97.07%; it is used for that diagnostic. Individual reversals, clean-accuracy costs, and effective repairs remain in the data. `configs/run_reuse.json` identifies shared training runs.
 
-The method builds on [WaNet](https://github.com/VinAIResearch/Warping-based_Backdoor_Attack-release) and [BackdoorBench](https://github.com/SCLBD/BackdoorBench). File-level notices and upstream license texts are retained; see `LICENSE.md`. AI assistance was used for language editing, plotting code, diagram layout, release documentation, and verification utilities. The authors supplied the experimental records and are responsible for the reported results.
+The method builds on [WaNet](https://github.com/VinAIResearch/Warping-based_Backdoor_Attack-release) and [BackdoorBench](https://github.com/SCLBD/BackdoorBench). File-level notices and upstream license texts are retained; see `LICENSE.md`. AI assistance (GLM-5.3, accessed through the ZCode editor) was used for language editing and document layout. The schematic in Fig. 1 was drafted with the same tool and refined manually by the authors. All training code, plotting code, and experimental records were produced and checked by the authors, who are responsible for the reported results.
